@@ -1,30 +1,24 @@
-import React, { useEffect } from 'react'
-import { connect } from 'react-redux'
+//@ts-check
 
-import { fetchFruits } from '../actions'
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
 
-const App = (props) => {
-  useEffect(() => {
-    props.dispatch(fetchFruits())
-  })
+import Cars from "./Cars";
 
+function App () {
   return (
-    <>
-      <div className='app'>
-        <h1>Fullstack Boilerplate - with Fruits!</h1>
-        <ul>
-          {props.fruits.map(fruit => (
-            <li key={fruit}>{fruit}</li>
-          ))}
-        </ul>
-      </div>
-    </>
-  )
-}
+    <div className="app">
+      <Cars />
+    </div>
+  );
+};
+
 const mapStateToProps = (globalState) => {
   return {
-    fruits: globalState.fruits
-  }
-}
+    cars: globalState.cars
+  };
+};
 
 export default connect(mapStateToProps)(App)
+
+

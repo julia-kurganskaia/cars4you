@@ -3,8 +3,8 @@
 exports.up = function (knex) {
   return knex.schema.createTable("car", table => {
     table.increments("id")
-    table.string("model_id")
-    table.string("location_id")
+    table.integer("model_id")
+    table.integer("location_id")
     table.integer("odometer")
     table.integer("engine")
     table.string("fuel")
