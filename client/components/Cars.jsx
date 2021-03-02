@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { fetchCars } from "../actions";
 
-function Cars (props) {
+function Cars(props) {
 
   useEffect(() => {
     props.dispatch(fetchCars())
@@ -12,7 +12,7 @@ function Cars (props) {
   console.log(props.cars)
   return (
       <div>
-        <h1>Fullstack Boilerplate - with Fruits!</h1>
+        <h1>Nice cars for you!!!</h1>
         <div>
           {props.cars.map(car => (
             <div key={car.id}>{car.location_id}</div>
