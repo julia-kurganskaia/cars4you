@@ -7,7 +7,7 @@ import Cars from "./Cars";
 
 function App () {
   return (
-    <div className="app">
+    <div>
       <Cars />
     </div>
   );

@@ -13,9 +13,9 @@ function Cars(props) {
   return (
       <div>
         <h1>Nice cars for you!!!</h1>
-        <div>
+        <div className="cars-listings">
           {props.cars.map(car => (
-            <div key={car.id}>
+            <div className="car-card" key={car.id}>
               <div>
                 Model: {car.name}
               </div>
