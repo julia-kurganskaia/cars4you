@@ -15,7 +15,23 @@ function Cars(props) {
         <h1>Nice cars for you!!!</h1>
         <div>
           {props.cars.map(car => (
-            <div key={car.id}>{car.location_id}</div>
+            <div key={car.id}>
+              <div>
+                Model: {car.name}
+              </div>
+              <div>
+                Location: {car.location}
+              </div>
+              <div>
+                Odometer: {car.odometer}
+              </div>
+              <div>
+                Engine: {car.engine}
+              </div>
+              <div>
+                Fuel: {car.fuel}
+              </div>
+            </div>
           ))}
         </div>
       </div>
