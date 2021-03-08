@@ -20,6 +20,15 @@ function Cars(props) {
                 Model: {car.name}
               </div>
               <div>
+                Year: {car.year}
+              </div>
+              <div>
+                Colour: {car.colour}
+              </div>
+              <div>
+                Seats: {car.seats}
+              </div>
+              <div>
                 Location: {car.location}
               </div>
               <div>
@@ -30,6 +39,12 @@ function Cars(props) {
               </div>
               <div>
                 Fuel: {car.fuel}
+              </div>
+              <div>
+                Transmission: {car.transmission}
+              </div>
+              <div>
+                Price: {car.price}
               </div>
             </div>
           ))}
