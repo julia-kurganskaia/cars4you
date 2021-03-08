@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
+
+html, body {
+    font-family: 'Oxygen', sans-serif;
+}
+
 .cars-listings {
     display: flex;
     justify-content: space-around;
