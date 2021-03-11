@@ -8,28 +8,35 @@ function Cars(props) {
 
   useEffect(() => {
     props.dispatch(fetchCars())
-  }, [])
-  console.log(props.cars)
+  }, []);
+
   return (
-      <div>
+    <div>
         <h1>Nice cars for you!!!</h1>
-        <div className="cars-listings">
+        <div>
+          <div className="car-card detail">
           {props.cars.map(car => (
-            <div className="car-card" key={car.id}>
+            <div className="detail" key={car.id}>
               <div>
-                Model: {car.name}
+                PIC
               </div>
               <div>
-                Year: {car.year}
+              <div>
+                {car.location}
               </div>
               <div>
-                Colour: {car.colour}
+                {car.name}
               </div>
               <div>
-                Seats: {car.seats}
+                {car.year}
               </div>
-              <div>
-                Location: {car.location}
+              <div className="detail">
+                <div>
+                  Colour: {car.colour}
+                </div>
+                <div>
+                  Seats: {car.seats}
+                </div>
               </div>
               <div>
                 Odometer: {car.odometer}
@@ -44,12 +51,15 @@ function Cars(props) {
                 Transmission: {car.transmission}
               </div>
               <div>
-                Price: {car.price}
+                Asking price: ${car.price}
               </div>
+            </div>
+
             </div>
           ))}
         </div>
       </div>
+    </div>
   )
 }
 

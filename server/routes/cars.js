@@ -4,7 +4,7 @@ const db = require('../db/cars')
 
 const router = express.Router()
 
-router.get('/', (req, res) => {
+router.get("/", (req, res) => {
   db.getCars()
     .then(results => {
       res.json({ cars: results })
