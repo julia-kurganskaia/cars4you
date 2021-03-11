@@ -16,9 +16,10 @@ function Cars(props) {
         <div>
           <div className="car-card detail">
           {props.cars.map(car => (
+
             <div className="detail" key={car.id}>
               <div>
-                PIC
+                <img src={"listings-images/" + car.id.toString() + ".jpg"} />
               </div>
               <div>
               <div>
@@ -42,13 +43,12 @@ function Cars(props) {
                 Odometer: {car.odometer}
               </div>
               <div>
-                Engine: {car.engine}
-              </div>
-              <div>
-                Fuel: {car.fuel}
-              </div>
-              <div>
-                Transmission: {car.transmission}
+                <div>
+                  Engine details
+                </div>
+                <div>
+                  {car.engine} {car.fuel} {car.transmission}
+                </div>
               </div>
               <div>
                 Asking price: ${car.price}
