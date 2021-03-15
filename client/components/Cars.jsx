@@ -12,49 +12,46 @@ function Cars(props) {
 
   return (
     <div>
-        <h1>Nice cars for you!!!</h1>
+        <h1 className="header">cars4you</h1>
         <div>
           <div className="car-card detail">
           {props.cars.map(car => (
 
             <div className="detail" key={car.id}>
               <div>
-                <img src={"listings-images/" + car.id.toString() + ".jpg"} />
+                <img className="cars-pic" src={"listings-images/" + car.id.toString() + ".jpg"} />
               </div>
-              <div>
-              <div>
-                {car.location}
-              </div>
-              <div>
-                {car.name}
-              </div>
-              <div>
-                {car.year}
-              </div>
-              <div className="detail">
-                <div>
+              <div className="card">
+                <div className="cars-detail">
+                  {car.location}
+                </div>
+                <div className="cars-detail">
+                  {car.name}
+                </div>
+                <div className="cars-detail">
+                  {car.year}
+                </div>
+                <div className="cars-detail">
                   Colour: {car.colour}
                 </div>
+                <div className="cars-detail">
+                Seats: {car.seats}
+                </div>
+                <div className="cars-detail">
+                  Odometer: {car.odometer}
+                </div>
+                <div className="cars-detail">
+                  <div>
+                    Engine details
+                  </div>
                 <div>
-                  Seats: {car.seats}
+                  {car.engine}, {car.fuel}, {car.transmission}
+                </div>
+                </div>
+                <div className="cars-detail">
+                  Asking price: $ {car.price}
                 </div>
               </div>
-              <div>
-                Odometer: {car.odometer}
-              </div>
-              <div>
-                <div>
-                  Engine details
-                </div>
-                <div>
-                  {car.engine} {car.fuel} {car.transmission}
-                </div>
-              </div>
-              <div>
-                Asking price: ${car.price}
-              </div>
-            </div>
-
             </div>
           ))}
         </div>

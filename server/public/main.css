@@ -11,6 +11,26 @@ html, body {
     flex-direction: column;
 }
 
+.card {
+    padding-top: 10px;
+}
+
 .detail {
     display: flex;
+    padding: 30px;
+}
+
+.header {
+    text-align: center;
+}
+
+.cars-pic {
+    width: 600px;
+    height: 420px;
+    margin-right: 50px;
+}
+
+.cars-detail {
+    padding: 5px;
+    font-size: 20px;
 }
