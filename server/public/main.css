@@ -4,6 +4,11 @@ html, body {
     font-family: 'Oxygen', sans-serif;
 }
 
+.header {
+    text-align: center;
+    font-size: 70px;
+}
+
 .car-card {
     display: flex;
     align-items: center;
@@ -18,10 +23,6 @@ html, body {
 .detail {
     display: flex;
     padding: 30px;
-}
-
-.header {
-    text-align: center;
 }
 
 .cars-pic {

@@ -51,6 +51,10 @@ function Cars(props) {
                 <div className="cars-detail">
                   Asking price: $ {car.price}
                 </div>
+                <div>
+                  <button>Learn more</button>
+                  <button>Contact us</button>
+                </div>
               </div>
             </div>
           ))}
