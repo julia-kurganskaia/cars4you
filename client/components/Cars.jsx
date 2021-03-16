@@ -3,16 +3,13 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { fetchCars } from "../actions";
+import { Link } from "react-router-dom";
 
 function Cars(props) {
 
   useEffect(() => {
     props.dispatch(fetchCars())
   }, []);
-
-  function handleClick(e) {
-    console.log("HI")
-  }
 
   return (
     <div>
@@ -57,7 +54,7 @@ function Cars(props) {
                 </div>
                 <div>
                   <button>Learn more</button>
-                  <button onClick={handleClick}>Contact us</button>
+                  <Link to="/contact"><button>Contact us</button></Link>
                 </div>
               </div>
             </div>
