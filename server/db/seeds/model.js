@@ -8,7 +8,7 @@ exports.seed = function (knex) {
         return knex("model").insert([
           { id: 1, make_id: 1, name: "Mitsubishi Outlander Vr-X"},
           { id: 2, make_id: 2, name: "Toyota Corolla Axio"},
-          { id: 3, make_id: 3, name: "Holden Other EJ Premier"}
+          { id: 3, make_id: 3, name: "Holden EJ Premier"}
         ]);
       });
   };
