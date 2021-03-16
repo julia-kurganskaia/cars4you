@@ -10,6 +10,10 @@ function Cars(props) {
     props.dispatch(fetchCars())
   }, []);
 
+  function handleClick(e) {
+    console.log("HI")
+  }
+
   return (
     <div>
         <h1 className="header">cars4you</h1>
@@ -53,7 +57,7 @@ function Cars(props) {
                 </div>
                 <div>
                   <button>Learn more</button>
-                  <button>Contact us</button>
+                  <button onClick={handleClick}>Contact us</button>
                 </div>
               </div>
             </div>

@@ -1,15 +1,16 @@
 //@ts-check
 
-import React, { useEffect } from 'react';
+import React from 'react';
+import { HashRouter as Router, Route } from "react-router-dom"
 import { connect } from 'react-redux';
 
 import Cars from "./Cars";
 
 function App () {
   return (
-    <div>
-      <Cars />
-    </div>
+    <Router>
+      <Route exact path="/" component={Cars} />
+    </Router>
   );
 };
 
