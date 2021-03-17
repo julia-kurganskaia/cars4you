@@ -53,7 +53,7 @@ function Cars(props) {
                   Asking price: $ {car.price}
                 </div>
                 <div>
-                  <button>Learn more</button>
+                  <Link to={"/" + car.id}><button>Learn more</button></Link>
                   <Link to="/contact"><button>Contact us</button></Link>
                 </div>
               </div>
