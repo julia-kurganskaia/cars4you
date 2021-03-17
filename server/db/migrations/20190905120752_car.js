@@ -4,6 +4,7 @@ exports.up = function (knex) {
   return knex.schema.createTable("car", table => {
     table.increments("id")
     table.integer("model_id")
+    table.integer("description_id")
     table.integer("location_id")
     table.integer("odometer")
     table.integer("engine")
