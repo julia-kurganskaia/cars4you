@@ -12,6 +12,7 @@ function App () {
     <Router>
       <Route exact path="/" component={Cars} />
       <Route path="/contact" component={ContactUs} />
+      <Route path="/:id" component={Car} />
     </Router>
   );
 };
