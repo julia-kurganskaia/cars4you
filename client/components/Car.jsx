@@ -1,18 +1,17 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+
+//@ts-check
 
 function Car (props) {
     const carId = props.match.params.id;
     const data = props.cars;
 
-    console.log(carId, data)
+    for (let i = 0; i < data.length; i++) {
+        if (data[i].id.toString() === carId) {
+            const displayingCar = data[i];
 
-    for (let i = 0; i <= data.length; i++) {
-        let displayingCar;
-        if (data[i].id == carId) {
-            displayingCar = data[i];
-            console.log(displayingCar.id)
             return (
                 <div className="oneCar">
                     <Link to="/">Home</Link>
@@ -55,6 +54,13 @@ function Car (props) {
             )
         }
     }
+    return (
+        <div>
+            <Link to="/">Home</Link>
+            <div>Sorry, no car was found.</div>
+        </div>
+    )
+
 }
 
 const mapStateToProps = (globalState) => {
