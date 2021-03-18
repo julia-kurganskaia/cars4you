@@ -35,3 +35,7 @@ html, body {
     padding: 5px;
     font-size: 20px;
 }
+
+.oneCar {
+    display: flex;
+}
