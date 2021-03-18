@@ -1,13 +1,8 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-// import { fetchCars } from "../actions";
-import { getCarById } from "../apis/cars";
-// import { getCarById } from "../apis/cars";
+import { Link } from "react-router-dom";
 
 function Car (props) {
-    // useEffect(() => {
-    //   props.dispatch(fetchCars())
-    //   }, []);
     const carId = props.match.params.id;
     const data = props.cars;
 
@@ -20,6 +15,7 @@ function Car (props) {
             console.log(displayingCar.id)
             return (
                 <div className="oneCar">
+                    <Link to="/">Home</Link>
                     <div>
                         <img src={"listings-images/" + displayingCar.id.toString() + ".jpg"} />
                     </div>
