@@ -5,11 +5,11 @@ import { Link } from "react-router-dom";
 //@ts-check
 
 function Car (props) {
-    const carId = props.match.params.id;
+    const carId = Number(props.match.params.id);
     const data = props.cars;
 
     for (let i = 0; i < data.length; i++) {
-        if (data[i].id.toString() === carId) {
+        if (data[i].id === carId) {
             const displayingCar = data[i];
 
             return (
