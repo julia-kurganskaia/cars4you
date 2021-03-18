@@ -2,10 +2,10 @@
 
 import React from 'react';
 import { HashRouter as Router, Route } from "react-router-dom"
-import { connect } from 'react-redux';
 
 import Cars from "./Cars";
 import ContactUs from "./ContactUs";
+import Car from "./Car";
 
 function App () {
   return (
@@ -16,12 +16,4 @@ function App () {
   );
 };
 
-const mapStateToProps = (globalState) => {
-  return {
-    cars: globalState.cars
-  };
-};
-
-export default connect(mapStateToProps)(App)
-
-
+export default App;
