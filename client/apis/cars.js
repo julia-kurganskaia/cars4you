@@ -1,11 +1,11 @@
 //@ts-check
 
-import request from 'superagent'
+import request from "superagent"
 
-const rootUrl = '/api/v1'
+const rootUrl = "/api/v1"
 
 export function getCars () {
-  return request.get(rootUrl + '/cars')
+  return request.get(rootUrl + "/cars")
     .then(res => {
       return res.body.cars;
     });
