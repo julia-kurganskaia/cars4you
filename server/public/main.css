@@ -42,4 +42,21 @@ html, body {
 
 .sorting {
     display: flex;
+    padding: 30px;
+}
+
+#sort-by {
+    padding-right: 10px;
+}
+
+#price {
+    padding-right: 5px;
+}
+
+.sorting-by-price {
+    display: flex;
+}
+
+.angle {
+    padding-right: 5px;
 }
