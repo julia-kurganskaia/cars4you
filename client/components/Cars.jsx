@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { fetchCars } from "../actions";
 import { Link } from "react-router-dom";
+import Sorting from "./Sorting";
 
 function Cars(props) {
 
@@ -14,6 +15,7 @@ function Cars(props) {
   return (
     <div>
         <h1 className="header">cars4you</h1>
+        <Sorting />
         <div>
           <div className="car-card detail">
           {props.cars.map(car => (
