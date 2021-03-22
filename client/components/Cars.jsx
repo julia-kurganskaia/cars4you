@@ -69,9 +69,10 @@ function Cars(props) {
 
 const mapStateToProps = (globalState) => {
     return {
-      cars: globalState.cars
+      cars: globalState.cars,
+      sorting: globalState.sorting,
     }
-  };
+};
 
 
   export default connect(mapStateToProps)(Cars)
