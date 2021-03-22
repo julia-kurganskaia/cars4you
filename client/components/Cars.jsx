@@ -12,6 +12,17 @@ function Cars(props) {
     props.dispatch(fetchCars())
   }, []);
 
+  if (props.sorting.pricelowestFirst === true) {
+    props.cars.sort((a, b) => {
+      return a.price - b.price;
+    });
+  } else {
+    props.cars.sort((a, b) => {
+      return b.price - a.price;
+    });
+  }
+
+console.log(props.sorting)
   return (
     <div>
         <h1 className="header">cars4you</h1>

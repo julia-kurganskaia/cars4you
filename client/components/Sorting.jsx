@@ -7,6 +7,7 @@ import { togglePrice } from "../actions";
 function Sorting (props) {
 
     const lowestFirstByClick = () => {
+        // console.log(props.sorting, "iiiiiiiiiiiii")
         if (props.sorting.pricelowestFirst === false) {
             props.dispatch(togglePrice());
         }
