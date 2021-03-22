@@ -1,6 +1,7 @@
 import { getCars } from "../apis/cars";
 
 export const SET_CARS = "SET_CARS";
+export const TOGGLE_PRICE = "TOGGLE_PRICE";
 
 export function setCars (cars) {
   return {
@@ -16,5 +17,11 @@ export function fetchCars () {
         dispatch(setCars(cars))
         return null
       });
+  };
+};
+
+export function togglePrice() {
+  return {
+    type: TOGGLE_PRICE,
   };
 };
