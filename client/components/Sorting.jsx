@@ -18,11 +18,8 @@ function Sorting (props) {
         }
     };
 
-    console.log(props.sorting, 'bbb')
-
     return (
         <div className="sorting">
-            {JSON.stringify(props.sorting)}
             <div id="sort-by">Sort by:</div>
             <div className="sorting-by-price">
                 <div id="price">Price</div>
