@@ -1,4 +1,4 @@
-import { SET_CARS } from '../actions'
+import { SET_CARS } from "../actions";
 
 const initialState = [];
 
