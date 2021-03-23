@@ -49,11 +49,11 @@ html, body {
     padding-right: 10px;
 }
 
-#price {
+#price, #year {
     padding-right: 5px;
 }
 
-.sorting-by-price {
+.sorting-by {
     display: flex;
 }
 
