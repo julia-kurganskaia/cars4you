@@ -12,17 +12,28 @@ function Cars(props) {
     props.dispatch(fetchCars())
   }, []);
 
-  if (props.sorting.pricelowestFirst === true) {
-    props.cars.sort((a, b) => {
-      return a.price - b.price;
-    });
-  } else {
-    props.cars.sort((a, b) => {
-      return b.price - a.price;
-    });
-  }
+  if (props.sorting.sortBy === "price") {
+    if (props.sorting.pricelowestFirst === true) {
+      props.cars.sort((a, b) => {
+        return a.price - b.price;
+      });
+    } else {
+      props.cars.sort((a, b) => {
+        return b.price - a.price;
+      });
+    };
+  } else if (props.sorting.sortBy === "year") {
+    if (props.sorting.oldestYearFirst === false) {
+      props.cars.sort((a, b) => {
+        return a.year - b.year;
+      });
+    } else {
+      props.cars.sort((a, b) => {
+        return b.year - a.year;
+      });
+    };
+  };
 
-console.log(props.sorting)
   return (
     <div>
         <h1 className="header">cars4you</h1>
