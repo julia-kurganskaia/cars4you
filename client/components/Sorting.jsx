@@ -2,33 +2,32 @@
 
 import React from "react";
 import { connect } from "react-redux";
-import { togglePrice } from "../actions";
-import { toggleYear } from "../actions";
+import { lowPriceFirst, highPriceFirst, newCarsFirst, oldCarsFirst, lowOdometerFirst, highOdometerFirst } from "../actions";
 
 function Sorting (props) {
 
-    const lowestFirstByClick = () => {
-        if (props.sorting.pricelowestFirst === false) {
-            props.dispatch(togglePrice());
-        }
+    const highPriceFirstByClick = () => {
+        props.dispatch(highPriceFirst());
     };
 
-    const highestFirstByClick = () => {
-        if (props.sorting.pricelowestFirst === true) {
-            props.dispatch(togglePrice());
-        }
+    const lowPriceFirstByClick = () => {
+        props.dispatch(lowPriceFirst());
     };
 
-    const oldestFirstByClick = () => {
-        if (props.sorting.oldestYearFirst === false) {
-            props.dispatch(toggleYear());
-        }
-    }
+    const oldCarsFirstByClick = () => {
+        props.dispatch(oldCarsFirst());
+    };
 
-    const newestFirstByClick = () => {
-        if (props.sorting.oldestYearFirst === true) {
-            props.dispatch(toggleYear());
-        }
+    const newCarsFirstByClick = () => {
+        props.dispatch(newCarsFirst());
+    };
+
+    const highestOdometerFirstByClick = () => {
+        props.dispatch(highOdometerFirst());
+    };
+
+    const lowestOdometerFirstByClick = () => {
+        props.dispatch(lowOdometerFirst());
     };
 
     return (
@@ -36,13 +35,18 @@ function Sorting (props) {
             <div id="sort-by">Sort by:</div>
             <div className="sorting-by">
                 <div id="price">Price</div>
-                <i onClick={lowestFirstByClick} className="fas fa-angle-down angle"></i>
-                <i onClick={highestFirstByClick} className="fas fa-angle-up angle"></i>
+                <i onClick={highPriceFirstByClick} className="fas fa-angle-down angle"></i>
+                <i onClick={lowPriceFirstByClick} className="fas fa-angle-up angle"></i>
             </div>
             <div className="sorting-by">
-                <div id="year">Year</div>
-                <i onClick={newestFirstByClick} className="fas fa-angle-down angle"></i>
-                <i onClick={oldestFirstByClick} className="fas fa-angle-up angle"></i>
+                <div id="year">Age</div>
+                <i onClick={oldCarsFirstByClick} className="fas fa-angle-down angle"></i>
+                <i onClick={newCarsFirstByClick} className="fas fa-angle-up angle"></i>
+            </div>
+            <div className="sorting-by">
+                <div id="price">Odometer</div>
+                <i onClick={highestOdometerFirstByClick} className="fas fa-angle-down angle"></i>
+                <i onClick={lowestOdometerFirstByClick} className="fas fa-angle-up angle"></i>
             </div>
         </div>
     )

@@ -13,26 +13,36 @@ function Cars(props) {
   }, []);
 
   if (props.sorting.sortBy === "price") {
-    if (props.sorting.pricelowestFirst === true) {
+    if (props.sorting.priceHighestFirst === true) {
       props.cars.sort((a, b) => {
-        return a.price - b.price;
+        return b.price - a.price;
       });
     } else {
       props.cars.sort((a, b) => {
-        return b.price - a.price;
+        return a.price - b.price;
       });
     };
   } else if (props.sorting.sortBy === "year") {
     if (props.sorting.oldestYearFirst === false) {
       props.cars.sort((a, b) => {
-        return a.year - b.year;
+        return b.year - a.year;
       });
     } else {
       props.cars.sort((a, b) => {
-        return b.year - a.year;
+        return a.year - b.year;
       });
     };
-  };
+  } else if (props.sorting.sortBy === "odometer") {
+    if (props.sorting.highOdometerNumber === false) {
+      props.cars.sort((a, b) => {
+        return a.odometer - b.odometer;
+      })
+    } else {
+      props.cars.sort((a, b) => {
+        return b.odometer - a.odometer;
+      })
+    }
+  }
 
   return (
     <div>
