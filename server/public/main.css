@@ -60,3 +60,7 @@ html, body {
 .angle {
     padding-right: 5px;
 }
+
+.active {
+    color: red;
+}
