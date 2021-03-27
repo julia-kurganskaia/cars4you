@@ -6,12 +6,7 @@ import { fetchCars } from "../actions";
 import { Link } from "react-router-dom";
 import Sorting from "./Sorting";
 
-function Cars(props) {
-
-  useEffect(() => {
-    props.dispatch(fetchCars())
-  }, []);
-
+function carsSorting (props) {
   if (props.sorting.sortBy === "price") {
     if (props.sorting.priceHighestFirst === true) {
       props.cars.sort((a, b) => {
@@ -42,7 +37,16 @@ function Cars(props) {
         return b.odometer - a.odometer;
       })
     }
-  }
+  };
+};
+
+function Cars (props) {
+
+  useEffect(() => {
+    props.dispatch(fetchCars())
+  }, []);
+
+  carsSorting (props);
 
   return (
     <div>
@@ -107,4 +111,4 @@ const mapStateToProps = (globalState) => {
 };
 
 
-  export default connect(mapStateToProps)(Cars)
+export default connect(mapStateToProps)(Cars)
