@@ -48,6 +48,15 @@ function filteringCarsByLocation(props) {
 
   let filteredCars = props.cars.filter(car => car.location.toLowerCase() === props.filtering.location.toLowerCase());
   return filteredCars;
+};
+
+function filteringByColour(props) {
+  if (props.filtering.colour === "") {
+    return props.cars;
+  }
+
+  let filteredByColour = props.cars.filter(car => car.colour.toLowerCase() === props.filtering.colour.toLowerCase());
+  return filteredByColour;
 }
 
 function Cars(props) {
@@ -57,7 +66,9 @@ function Cars(props) {
   }, []);
 
   carsSorting(props);
+
   const filteredByLocationCars = filteringCarsByLocation(props);
+  const filteredByColourCars = filteringByColour(props);
 
   return (
     <div>
@@ -68,7 +79,7 @@ function Cars(props) {
         </div>
         <div>
           <div className="car-card detail">
-          {filteredByLocationCars.map(car => (
+          {filteredByColourCars.map(car => (
 
             <div className="detail" key={car.id}>
               <div>

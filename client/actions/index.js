@@ -11,6 +11,7 @@ export const TOGGLE_ODOMETER = "TOGGLE_ODOMETER";
 export const LOW_ODOMETER_FIRST = "LOW_ODOMETER_FIRST";
 export const HIGH_ODOMETER_FIRST = "HIGH_ODOMETER_FIRST";
 export const FILTER_BY_LOCATION = "FILTER_BY_LOCATION";
+export const FILTER_BY_COLOUR = "FILTER_BY_COLOUR";
 
 export function setCars(cars) {
   return {
@@ -71,3 +72,10 @@ export function filterByLocation(location) {
     location
   };
 };
+
+export function filterByColour(colour) {
+  return {
+    type: FILTER_BY_COLOUR,
+    colour
+  }
+}
