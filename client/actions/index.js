@@ -12,14 +12,14 @@ export const LOW_ODOMETER_FIRST = "LOW_ODOMETER_FIRST";
 export const HIGH_ODOMETER_FIRST = "HIGH_ODOMETER_FIRST";
 export const FILTER_BY_LOCATION = "FILTER_BY_LOCATION";
 
-export function setCars (cars) {
+export function setCars(cars) {
   return {
     type: SET_CARS,
     cars
   };
 };
 
-export function fetchCars () {
+export function fetchCars() {
   return dispatch => {
     return getCars()
       .then(cars => {
@@ -29,37 +29,37 @@ export function fetchCars () {
   };
 };
 
-export function lowPriceFirst () {
+export function lowPriceFirst() {
   return {
     type: LOW_PRICE_FIRST,
   };
 };
 
-export function highPriceFirst () {
+export function highPriceFirst() {
   return {
     type: HIGH_PRICE_FIRST,
   };
 };
 
-export function newCarsFirst () {
+export function newCarsFirst() {
   return {
     type: NEW_CARS_FIRST,
   };
 };
 
-export function oldCarsFirst () {
+export function oldCarsFirst() {
   return {
     type: OLD_CARS_FIRST,
   };
 };
 
-export function lowOdometerFirst () {
+export function lowOdometerFirst() {
   return {
     type: LOW_ODOMETER_FIRST,
   };
 };
 
-export function highOdometerFirst () {
+export function highOdometerFirst() {
   return {
     type: HIGH_ODOMETER_FIRST,
   };

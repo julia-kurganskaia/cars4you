@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 //@ts-check
 
-function Car (props) {
+function Car(props) {
     const carId = Number(props.match.params.id);
     const data = props.cars;
 

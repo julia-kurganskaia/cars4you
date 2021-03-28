@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import Sorting from "./Sorting";
 import Filtering from "./Filtering";
 
-function carsSorting (props) {
+function carsSorting(props) {
   if (props.sorting.sortBy === "price") {
     if (props.sorting.priceHighestFirst === true) {
       props.cars.sort((a, b) => {

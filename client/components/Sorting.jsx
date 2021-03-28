@@ -4,7 +4,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { lowPriceFirst, highPriceFirst, newCarsFirst, oldCarsFirst, lowOdometerFirst, highOdometerFirst } from "../actions";
 
-function Sorting (props) {
+function Sorting(props) {
 
     const highPriceFirstByClick = () => {
         props.dispatch(highPriceFirst());

@@ -7,7 +7,7 @@ import Cars from "./Cars";
 import ContactUs from "./ContactUs";
 import Car from "./Car";
 
-function App () {
+function App() {
   return (
     <Router>
       <Route exact path="/" component={Cars} />
