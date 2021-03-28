@@ -1,3 +1,5 @@
+//@ts-check
+
 import { getCars } from "../apis/cars";
 
 export const SET_CARS = "SET_CARS";
@@ -8,6 +10,7 @@ export const OLD_CARS_FIRST = "OLD_CARS_FIRST";
 export const TOGGLE_ODOMETER = "TOGGLE_ODOMETER";
 export const LOW_ODOMETER_FIRST = "LOW_ODOMETER_FIRST";
 export const HIGH_ODOMETER_FIRST = "HIGH_ODOMETER_FIRST";
+export const FILTER_BY_LOCATION = "FILTER_BY_LOCATION";
 
 export function setCars (cars) {
   return {
@@ -59,5 +62,12 @@ export function lowOdometerFirst () {
 export function highOdometerFirst () {
   return {
     type: HIGH_ODOMETER_FIRST,
+  };
+};
+
+export function filterByLocation(location) {
+  return {
+    type: FILTER_BY_LOCATION,
+    location
   };
 };

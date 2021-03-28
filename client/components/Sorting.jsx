@@ -50,7 +50,7 @@ function Sorting (props) {
             </div>
         </div>
     )
-}
+};
 
 const mapStateToProps = (globalState) => {
     return {

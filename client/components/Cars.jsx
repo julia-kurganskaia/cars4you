@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { fetchCars } from "../actions";
 import { Link } from "react-router-dom";
 import Sorting from "./Sorting";
+import Filtering from "./Filtering";
 
 function carsSorting (props) {
   if (props.sorting.sortBy === "price") {
@@ -40,21 +41,34 @@ function carsSorting (props) {
   };
 };
 
-function Cars (props) {
+function filteringCarsByLocation(props) {
+  if (props.filtering.location === "") {
+    return props.cars;
+  }
+
+  let filteredCars = props.cars.filter(car => car.location.toLowerCase() === props.filtering.location.toLowerCase());
+  return filteredCars;
+}
+
+function Cars(props) {
 
   useEffect(() => {
     props.dispatch(fetchCars())
   }, []);
 
-  carsSorting (props);
+  carsSorting(props);
+  const filteredByLocationCars = filteringCarsByLocation(props);
 
   return (
     <div>
         <h1 className="header">cars4you</h1>
-        <Sorting />
+        <div className="sorting-filtering">
+          <Sorting />
+          <Filtering />
+        </div>
         <div>
           <div className="car-card detail">
-          {props.cars.map(car => (
+          {filteredByLocationCars.map(car => (
 
             <div className="detail" key={car.id}>
               <div>
@@ -107,6 +121,7 @@ const mapStateToProps = (globalState) => {
     return {
       cars: globalState.cars,
       sorting: globalState.sorting,
+      filtering: globalState.filtering,
     }
 };
 

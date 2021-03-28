@@ -42,7 +42,6 @@ html, body {
 
 .sorting {
     display: flex;
-    padding: 30px;
 }
 
 #sort-by {
@@ -63,4 +62,9 @@ html, body {
 
 .active {
     color: red;
+}
+
+.sorting-filtering {
+    display: flex;
+    padding: 30px;
 }
