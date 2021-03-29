@@ -61,7 +61,6 @@ function filteringByColour(filtering, cars) {
 
 function filteringByMake(filtering, cars) {
   if (filtering.make === "") {
-    console.log(cars)
     return cars;
   }
 
