@@ -15,7 +15,7 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 location: action.location,
             };
-
+console.log(newState, "HIIIIIIIIIIIIIIIIIIi")
             return newState;
 
         case FILTER_BY_COLOUR:

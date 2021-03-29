@@ -41,23 +41,24 @@ function carsSorting(props) {
   };
 };
 
-function filteringCarsByLocation(props) {
-  if (props.filtering.location === "") {
-    return props.cars;
+function filteringCarsByLocation(filtering, cars) {
+  if (filtering.location === "") {
+    return cars;
   }
 
-  let filteredCars = props.cars.filter(car => car.location.toLowerCase() === props.filtering.location.toLowerCase());
+  let filteredCars = cars.filter(car => car.location.toLowerCase() === filtering.location.toLowerCase());
+  console.log(filteredCars)
   return filteredCars;
 };
 
-function filteringByColour(props) {
-  if (props.filtering.colour === "") {
-    return props.cars;
+function filteringByColour(filtering, cars) {
+  if (filtering.colour === "") {
+    return cars;
   }
 
-  let filteredByColour = props.cars.filter(car => car.colour.toLowerCase() === props.filtering.colour.toLowerCase());
+  let filteredByColour = cars.filter(car => car.colour.toLowerCase() === filtering.colour.toLowerCase());
   return filteredByColour;
-}
+};
 
 function Cars(props) {
 
@@ -67,8 +68,8 @@ function Cars(props) {
 
   carsSorting(props);
 
-  const filteredByLocationCars = filteringCarsByLocation(props);
-  const filteredByColourCars = filteringByColour(props);
+  const filteredByLocationCars = filteringCarsByLocation(props.filtering, props.cars);
+  const filteredByColourCars = filteringByColour(props.filtering, filteredByLocationCars);
 
   return (
     <div>
