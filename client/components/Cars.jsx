@@ -47,7 +47,6 @@ function filteringCarsByLocation(filtering, cars) {
   }
 
   let filteredCars = cars.filter(car => car.location.toLowerCase() === filtering.location.toLowerCase());
-  console.log(filteredCars)
   return filteredCars;
 };
 
@@ -60,6 +59,16 @@ function filteringByColour(filtering, cars) {
   return filteredByColour;
 };
 
+function filteringByMake(filtering, cars) {
+  if (filtering.make === "") {
+    console.log(cars)
+    return cars;
+  }
+
+  let filteredByMake = cars.filter(car => car.make_name.toLowerCase() === filtering.make.toLowerCase());
+  return filteredByMake;
+};
+
 function Cars(props) {
 
   useEffect(() => {
@@ -70,6 +79,7 @@ function Cars(props) {
 
   const filteredByLocationCars = filteringCarsByLocation(props.filtering, props.cars);
   const filteredByColourCars = filteringByColour(props.filtering, filteredByLocationCars);
+  const filteredByMakeCars = filteringByMake(props.filtering, filteredByColourCars);
 
   return (
     <div>
@@ -80,7 +90,7 @@ function Cars(props) {
         </div>
         <div>
           <div className="car-card detail">
-          {filteredByColourCars.map(car => (
+          {filteredByMakeCars.map(car => (
 
             <div className="detail" key={car.id}>
               <div>

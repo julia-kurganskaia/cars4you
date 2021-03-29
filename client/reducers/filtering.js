@@ -1,11 +1,11 @@
 //@ts-check
 
-import { FILTER_BY_LOCATION } from "../actions";
-import { FILTER_BY_COLOUR } from "../actions";
+import { FILTER_BY_LOCATION, FILTER_BY_COLOUR, FILTER_BY_MAKE } from "../actions";
 
 const initialState = {
     location: "",
     colour: "",
+    make: "",
 };
 
 const reducer = (state = initialState, action) => {
@@ -22,6 +22,14 @@ const reducer = (state = initialState, action) => {
             newState = {
                 ...state,
                 colour: action.colour,
+            };
+
+            return newState;
+
+        case FILTER_BY_MAKE:
+            newState = {
+                ...state,
+                make: action.make,
             };
 
             return newState;

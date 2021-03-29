@@ -12,6 +12,7 @@ export const LOW_ODOMETER_FIRST = "LOW_ODOMETER_FIRST";
 export const HIGH_ODOMETER_FIRST = "HIGH_ODOMETER_FIRST";
 export const FILTER_BY_LOCATION = "FILTER_BY_LOCATION";
 export const FILTER_BY_COLOUR = "FILTER_BY_COLOUR";
+export const FILTER_BY_MAKE = "FILTER_BY_MAKE";
 
 export function setCars(cars) {
   return {
@@ -77,5 +78,12 @@ export function filterByColour(colour) {
   return {
     type: FILTER_BY_COLOUR,
     colour
-  }
-}
+  };
+};
+
+export function filterByMakeCompany (make) {
+  return {
+    type: FILTER_BY_MAKE,
+    make
+  };
+};
