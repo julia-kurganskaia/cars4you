@@ -1,10 +1,15 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-
 //@ts-check
 
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import { fetchCars } from "../actions";
+
 function Car(props) {
+    useEffect(() => {
+        props.dispatch(fetchCars())
+    }, []);
+
     const carId = Number(props.match.params.id);
     const data = props.cars;
 
@@ -53,22 +58,21 @@ function Car(props) {
                     </div>
                 </div>
             )
-        }
-    }
+        };
+    };
     return (
         <div>
             <Link to="/">Home</Link>
             <div>Sorry, no car was found.</div>
         </div>
-    )
-
-}
+    );
+};
 
 const mapStateToProps = (globalState) => {
     return {
       cars: globalState.cars
     }
- };
+};
 
 
 export default connect(mapStateToProps)(Car)
