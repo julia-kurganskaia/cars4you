@@ -68,6 +68,15 @@ function filteringByMake(filtering, cars) {
   return filteredByMake;
 };
 
+function filteringByFuel(filtering, cars) {
+  if (filtering.fuel === "") {
+    return cars;
+  }
+
+  let filteredByFuel = cars.filter(car => car.fuel.toLowerCase() === filtering.fuel.toLowerCase());
+  return filteredByFuel;
+}
+
 function Cars(props) {
 
   useEffect(() => {
@@ -79,6 +88,7 @@ function Cars(props) {
   const filteredByLocationCars = filteringCarsByLocation(props.filtering, props.cars);
   const filteredByColourCars = filteringByColour(props.filtering, filteredByLocationCars);
   const filteredByMakeCars = filteringByMake(props.filtering, filteredByColourCars);
+  const filteredByFuelCars = filteringByFuel(props.filtering, filteredByMakeCars);
 
   return (
     <div>
@@ -89,7 +99,7 @@ function Cars(props) {
         </div>
         <div>
           <div className="car-card detail">
-          {filteredByMakeCars.map(car => (
+          {filteredByFuelCars.map(car => (
 
             <div className="detail" key={car.id}>
               <div>

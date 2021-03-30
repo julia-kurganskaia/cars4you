@@ -2,7 +2,7 @@
 
 import React from "react";
 import { connect } from "react-redux";
-import { filterByLocation, filterByColour, filterByMakeCompany } from "../actions";
+import { filterByLocation, filterByColour, filterByMakeCompany, filterByFuel } from "../actions";
 
 function Filtering(props) {
 
@@ -19,7 +19,13 @@ function Filtering(props) {
   const filteringByMakeCompany = (event) => {
     let make = event.target.value;
     props.dispatch(filterByMakeCompany(make));
-  }
+  };
+
+  const filteringByFuel = (event) => {
+    let fuel = event.target.value;
+    console.log(fuel)
+    props.dispatch(filterByFuel(fuel));
+  };
 
   return (
     <div>
@@ -43,6 +49,12 @@ function Filtering(props) {
           <option value="mitsubishi">Mitsubishi</option>
           <option value="toyota">Toyota</option>
           <option value="holden">Holden</option>
+        </select>
+
+        <select onChange={filteringByFuel}>
+          <option value="">--Fuel--</option>
+          <option value="petrol">Petrol</option>
+          <option value="hybrid">Hybrid</option>
         </select>
     </div>
   )

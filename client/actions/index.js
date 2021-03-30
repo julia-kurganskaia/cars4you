@@ -13,6 +13,7 @@ export const HIGH_ODOMETER_FIRST = "HIGH_ODOMETER_FIRST";
 export const FILTER_BY_LOCATION = "FILTER_BY_LOCATION";
 export const FILTER_BY_COLOUR = "FILTER_BY_COLOUR";
 export const FILTER_BY_MAKE = "FILTER_BY_MAKE";
+export const FILTER_BY_FUEL = "FILTER_BY_FUEL";
 
 export function setCars(cars) {
   return {
@@ -85,5 +86,12 @@ export function filterByMakeCompany (make) {
   return {
     type: FILTER_BY_MAKE,
     make
+  };
+};
+
+export function filterByFuel(fuel) {
+  return {
+    type: FILTER_BY_FUEL,
+    fuel
   };
 };
