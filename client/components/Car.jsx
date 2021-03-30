@@ -18,43 +18,45 @@ function Car(props) {
             const displayingCar = data[i];
 
             return (
-                <div className="oneCar">
+                <div >
                     <Link to="/">Home</Link>
-                    <div>
-                        <img src={"listings-images/" + displayingCar.id.toString() + ".jpg"} />
-                    </div>
-                    <div>
-                        <div className="cars-detail">
-                            {displayingCar.location}
+                    <div className="oneCar">
+                        <div className="content">
+                            <img className="car-pic" src={"listings-images/" + displayingCar.id.toString() + ".jpg"} />
                         </div>
-                        <div className="cars-detail">
-                            {displayingCar.name}
-                        </div>
-                        <div className="cars-detail">
-                            {displayingCar.year}
-                        </div>
-                        <div className="cars-detail">
-                            Colour: {displayingCar.colour}
-                        </div>
-                        <div className="cars-detail">
-                            Seats: {displayingCar.seats}
-                        </div>
-                        <div className="cars-detail">
-                            Odometer: {displayingCar.odometer}
-                        </div>
-                        <div className="cars-detail">
-                            <div>Engine details</div>
-                            <div>
-                                {displayingCar.engine}, {displayingCar.fuel}, {displayingCar.transmission}
+                        <div className="content">
+                            <div className="cars-detail">
+                                {displayingCar.location}
                             </div>
+                            <div className="cars-detail">
+                                {displayingCar.name}
+                            </div>
+                            <div className="cars-detail">
+                                {displayingCar.year}
+                            </div>
+                            <div className="cars-detail">
+                                Colour: {displayingCar.colour}
+                            </div>
+                            <div className="cars-detail">
+                                Seats: {displayingCar.seats}
+                            </div>
+                            <div className="cars-detail">
+                                Odometer: {displayingCar.odometer}
+                            </div>
+                            <div className="cars-detail">
+                                <div>Engine details</div>
+                                <div>
+                                    {displayingCar.engine}, {displayingCar.fuel}, {displayingCar.transmission}
+                                </div>
+                            </div>
+                            <div className="cars-detail">
+                                {displayingCar.about}
+                            </div>
+                            <div className="cars-detail">
+                                Asking price: $ {displayingCar.price}
+                            </div>
+                            <Link to="/contact"><button>Contact us</button></Link>
                         </div>
-                        <div className="cars-detail">
-                            {displayingCar.about}
-                        </div>
-                        <div className="cars-detail">
-                            Asking price: $ {displayingCar.price}
-                        </div>
-                        <Link to="/contact"><button>Contact us</button></Link>
                     </div>
                 </div>
             )

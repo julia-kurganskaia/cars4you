@@ -31,6 +31,11 @@ html, body {
     margin-right: 50px;
 }
 
+.car-pic {
+    height: 400px;
+    width: 600px;
+}
+
 .cars-detail {
     padding: 5px;
     font-size: 20px;
@@ -67,4 +72,8 @@ html, body {
 .sorting-filtering {
     display: flex;
     padding: 30px;
+}
+
+.content {
+    padding: 40px;
 }
