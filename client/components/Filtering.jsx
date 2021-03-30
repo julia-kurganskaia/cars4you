@@ -23,7 +23,6 @@ function Filtering(props) {
 
   const filteringByFuel = (event) => {
     let fuel = event.target.value;
-    console.log(fuel)
     props.dispatch(filterByFuel(fuel));
   };
 
