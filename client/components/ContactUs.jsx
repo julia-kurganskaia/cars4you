@@ -13,8 +13,7 @@ function ContactUs() {
                 </div>
             </div>
         </div>
-
-    )
-}
+    );
+};
 
 export default ContactUs
