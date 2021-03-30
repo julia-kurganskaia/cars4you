@@ -49,6 +49,7 @@ function Car(props) {
                         <div className="cars-detail">
                             Asking price: $ {displayingCar.price}
                         </div>
+                        <Link to="/contact"><button>Contact us</button></Link>
                     </div>
                 </div>
             )
