@@ -80,9 +80,7 @@ function filteringByFuel(filtering, cars) {
 function Cars(props) {
 
   useEffect(() => {
-    if (props.cars.length === 0) {
-      props.dispatch(fetchCars());
-    }
+    props.dispatch(fetchCars());
   }, []);
 
   carsSorting(props);

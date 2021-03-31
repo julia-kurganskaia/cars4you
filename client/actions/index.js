@@ -23,11 +23,16 @@ export function setCars(cars) {
 };
 
 export function fetchCars() {
-  return dispatch => {
+  return (dispatch, getState) => {
+    const state = getState();
+    if (state.cars.length !== 0) {
+      return;
+    }
+
     return getCars()
       .then(cars => {
-        dispatch(setCars(cars))
-        return null
+        dispatch(setCars(cars));
+        return null;
       });
   };
 };

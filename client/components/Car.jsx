@@ -7,9 +7,7 @@ import { fetchCars } from "../actions";
 
 function Car(props) {
     useEffect(() => {
-        if (props.cars.length === 0) {
-            props.dispatch(fetchCars());
-        }
+        props.dispatch(fetchCars());
     }, []);
 
     const carId = Number(props.match.params.id);
