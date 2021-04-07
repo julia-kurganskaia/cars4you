@@ -81,3 +81,20 @@ html, body {
 .login-link {
     padding-left: 30px;
 }
+
+.login-form {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-input {
+    padding: 5px;
+    margin: 5px;
+}
+
+.login-submit {
+    width: 150px;
+    margin: 5px;
+}
