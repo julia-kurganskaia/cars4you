@@ -6,6 +6,7 @@ import { fetchCars } from "../actions";
 import { Link } from "react-router-dom";
 import Sorting from "./Sorting";
 import Filtering from "./Filtering";
+import Authentication from "./Authentication";
 
 function carsSorting(props) {
   if (props.sorting.sortBy === "price") {
@@ -93,6 +94,7 @@ function Cars(props) {
   return (
     <div>
         <h1 className="header">cars4you</h1>
+        <Link className="login-link" to="/auth">Login</Link>
         <div className="sorting-filtering">
           <Sorting />
           <Filtering />
