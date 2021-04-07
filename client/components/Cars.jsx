@@ -6,7 +6,6 @@ import { fetchCars } from "../actions";
 import { Link } from "react-router-dom";
 import Sorting from "./Sorting";
 import Filtering from "./Filtering";
-import Authentication from "./Authentication";
 
 function carsSorting(props) {
   if (props.sorting.sortBy === "price") {
