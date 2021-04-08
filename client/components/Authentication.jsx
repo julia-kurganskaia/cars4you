@@ -4,7 +4,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function Authentication() {
-    return (
+       return (
         <div>
             <div>
                 <Link to="/">Home</Link>
@@ -17,9 +17,7 @@ function Authentication() {
                     <button className="login-submit">Submit</button>
                 </form>
             </div>
-
         </div>
-
     )
 };
 
