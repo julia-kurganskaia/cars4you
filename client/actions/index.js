@@ -1,8 +1,10 @@
 //@ts-check
 
 import { getCars } from "../apis/cars";
+import { getUsers } from "../apis/users";
 
 export const SET_CARS = "SET_CARS";
+export const SET_USERS = "SET_USERS";
 export const LOW_PRICE_FIRST = "LOW_PRICE_FIRST";
 export const HIGH_PRICE_FIRST = "HIGH_PRICE_FIRST";
 export const NEW_CARS_FIRST = "NEW_CARS_FIRST";
@@ -32,6 +34,28 @@ export function fetchCars() {
     return getCars()
       .then(cars => {
         dispatch(setCars(cars));
+        return null;
+      });
+  };
+};
+
+export function setUsers(users) {
+  return {
+    type: SET_USERS,
+    users
+  };
+};
+
+export function fetchUsers() {
+  return (dispatch, getState) => {
+    const state = getState();
+    if (state.users.length !== 0) {
+      return;
+    }
+
+    return getUsers()
+      .then(users => {
+        dispatch(setUsers(users));
         return null;
       });
   };

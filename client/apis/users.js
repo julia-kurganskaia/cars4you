@@ -4,9 +4,9 @@ import request from "superagent";
 
 const rootUrl = "/api/v1";
 
-export function getCars() {
-  return request.get(rootUrl + "/cars")
+export function getUsers() {
+  return request.get(rootUrl + "/auth")
     .then(res => {
-      return res.body.cars;
+      return res.body.users;
     });
 };
