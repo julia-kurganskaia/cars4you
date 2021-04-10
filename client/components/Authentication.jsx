@@ -19,7 +19,7 @@ function Authentication() {
       });
     });
   }
-console.log(formData)
+
   return (
     <div>
       <div>
