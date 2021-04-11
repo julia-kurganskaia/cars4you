@@ -1,21 +1,22 @@
 //@ts-check
 
 const express = require("express");
+const bcrypt = require('bcrypt');
 
 const db = require("../db/users");
-
 const router = express.Router()
 
-router.get("/", (req, res) => {
-    db.getUsers()
-      .then(results => {
-        res.json({ users: results })
-        return null
-      })
-      .catch(err => {
-        console.log(err)
-        res.status(500).json({ message: 'Something went wrong' })
-      })
-  });
+router.post("/", (req, res) => {
+  db.findUserByEmail(req.body.email)
+    .then(result => {
+      if (result !== null) {
+        if (bcrypt.compareSync(req.body.password, result.password)) {
+          res.json(true);
+          return;
+        }
+      }
+      res.json(false);
+    })
+});
 
-  module.exports = router
+module.exports = router

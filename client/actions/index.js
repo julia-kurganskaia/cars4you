@@ -1,10 +1,9 @@
 //@ts-check
 
 import { getCars } from "../apis/cars";
-import { getUsers } from "../apis/users";
+import request from "superagent";
 
 export const SET_CARS = "SET_CARS";
-export const SET_USERS = "SET_USERS";
 export const LOW_PRICE_FIRST = "LOW_PRICE_FIRST";
 export const HIGH_PRICE_FIRST = "HIGH_PRICE_FIRST";
 export const NEW_CARS_FIRST = "NEW_CARS_FIRST";
@@ -16,6 +15,20 @@ export const FILTER_BY_LOCATION = "FILTER_BY_LOCATION";
 export const FILTER_BY_COLOUR = "FILTER_BY_COLOUR";
 export const FILTER_BY_MAKE = "FILTER_BY_MAKE";
 export const FILTER_BY_FUEL = "FILTER_BY_FUEL";
+
+export function loginUser(email, password) {
+  return () => {
+    request.post("/api/v1/auth")
+      .send({email: email, password: password})
+      .then(res => {
+        if (res.body === false) {
+          alert("Please, enter correct credentials")
+        } else {
+          alert("You are logged in")
+        }
+      })
+  };
+};
 
 export function setCars(cars) {
   return {
@@ -34,28 +47,6 @@ export function fetchCars() {
     return getCars()
       .then(cars => {
         dispatch(setCars(cars));
-        return null;
-      });
-  };
-};
-
-export function setUsers(users) {
-  return {
-    type: SET_USERS,
-    users
-  };
-};
-
-export function fetchUsers() {
-  return (dispatch, getState) => {
-    const state = getState();
-    if (state.users.length !== 0) {
-      return;
-    }
-
-    return getUsers()
-      .then(users => {
-        dispatch(setUsers(users));
         return null;
       });
   };
