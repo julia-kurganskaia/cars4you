@@ -11,12 +11,18 @@ router.post("/", (req, res) => {
     .then(result => {
       if (result !== null) {
         if (bcrypt.compareSync(req.body.password, result.password)) {
+          req.session.email = req.body.email;
           res.json(true);
           return;
         }
       }
       res.json(false);
     })
+});
+
+router.post("/logout", (req, res) => {
+  req.session.destroy();
+  res.json();
 });
 
 module.exports = router

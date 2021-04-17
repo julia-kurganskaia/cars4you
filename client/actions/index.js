@@ -2,6 +2,7 @@
 
 import { getCars } from "../apis/cars";
 import request from "superagent";
+import history from "../utils/history";
 
 export const SET_CARS = "SET_CARS";
 export const LOW_PRICE_FIRST = "LOW_PRICE_FIRST";
@@ -24,7 +25,7 @@ export function loginUser(email, password) {
         if (res.body === false) {
           alert("Please, enter correct credentials")
         } else {
-          alert("You are logged in")
+          history.push("/");
         }
       })
   };
