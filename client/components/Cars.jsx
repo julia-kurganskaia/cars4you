@@ -92,8 +92,10 @@ function Cars(props) {
 
   return (
     <div>
-        <h1 className="header">cars4you</h1>
+      <div className="Login-link">
         <Link className="login-link" to="/auth">Login</Link>
+      </div>
+        <h1 className="header">cars4you</h1>
         <div className="sorting-filtering">
           <Sorting />
           <Filtering />
