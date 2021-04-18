@@ -16,15 +16,23 @@ export const FILTER_BY_LOCATION = "FILTER_BY_LOCATION";
 export const FILTER_BY_COLOUR = "FILTER_BY_COLOUR";
 export const FILTER_BY_MAKE = "FILTER_BY_MAKE";
 export const FILTER_BY_FUEL = "FILTER_BY_FUEL";
+export const USER_DATA = "USER_DATA";
 
 export function loginUser(email, password) {
-  return () => {
+  return (dispatch) => {
     request.post("/api/v1/auth")
       .send({email: email, password: password})
       .then(res => {
         if (res.body === false) {
           alert("Please, enter correct credentials")
         } else {
+          dispatch({
+            type: USER_DATA,
+            userData: res.body,
+          })
+
+          sessionStorage.setItem("userName", res.body.user_name);
+
           history.push("/");
         }
       })

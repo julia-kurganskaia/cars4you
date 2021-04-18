@@ -2,7 +2,7 @@
 
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { fetchCars } from "../actions";
+import { fetchCars, loginUser } from "../actions";
 import { Link } from "react-router-dom";
 import Sorting from "./Sorting";
 import Filtering from "./Filtering";
@@ -93,7 +93,14 @@ function Cars(props) {
   return (
     <div>
       <div className="Login-link">
-        <Link className="login-link" to="/auth">Login</Link>
+        {props.login.userName === null
+          ? <Link className="login-link" to="/auth">Login</Link>
+          : <div>
+              Hello {props.login.userName}
+            </div>
+
+        }
+
       </div>
         <h1 className="header">cars4you</h1>
         <div className="sorting-filtering">
@@ -156,6 +163,7 @@ const mapStateToProps = (globalState) => {
       cars: globalState.cars,
       sorting: globalState.sorting,
       filtering: globalState.filtering,
+      login: globalState.login,
     }
 };
 

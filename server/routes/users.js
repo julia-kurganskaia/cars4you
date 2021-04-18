@@ -12,7 +12,10 @@ router.post("/", (req, res) => {
       if (result !== null) {
         if (bcrypt.compareSync(req.body.password, result.password)) {
           req.session.email = req.body.email;
-          res.json(true);
+          res.json({
+            user_name: result.user_name,
+          });
+
           return;
         }
       }
