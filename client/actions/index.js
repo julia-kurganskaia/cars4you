@@ -17,6 +17,7 @@ export const FILTER_BY_COLOUR = "FILTER_BY_COLOUR";
 export const FILTER_BY_MAKE = "FILTER_BY_MAKE";
 export const FILTER_BY_FUEL = "FILTER_BY_FUEL";
 export const USER_DATA = "USER_DATA";
+export const USER_LOGOUT = "USER_LOGOUT";
 
 export function loginUser(email, password) {
   return (dispatch) => {
@@ -36,6 +37,18 @@ export function loginUser(email, password) {
           history.push("/");
         }
       })
+  };
+};
+
+export function userLogout() {
+  return (dispatch) => {
+    request.post("/api/v1/auth/logout")
+      .then(() => {
+        dispatch({
+          type: USER_LOGOUT,
+        })
+        sessionStorage.clear();
+      });
   };
 };
 

@@ -104,3 +104,7 @@ html, body {
     justify-content: flex-end;
     padding: 20px;
 }
+
+.Logout-link {
+    padding-left: 20px;
+}

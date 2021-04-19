@@ -1,6 +1,6 @@
 //@ts-check
 
-import { USER_DATA } from "../actions";
+import { USER_DATA, USER_LOGOUT } from "../actions";
 
 const initialState = {
     userName: sessionStorage.getItem("userName"),
@@ -16,6 +16,16 @@ const reducer = (state = initialState, action) => {
 
             return newState;
         }
+
+        case USER_LOGOUT: {
+            let newState = {
+                ...state,
+                userName: null,
+            };
+
+            return newState;
+        }
+
         default:
             return state;
     }

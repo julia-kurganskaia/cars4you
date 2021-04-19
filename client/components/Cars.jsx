@@ -2,7 +2,7 @@
 
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { fetchCars, loginUser } from "../actions";
+import { fetchCars, userLogout } from "../actions";
 import { Link } from "react-router-dom";
 import Sorting from "./Sorting";
 import Filtering from "./Filtering";
@@ -90,13 +90,19 @@ function Cars(props) {
   const filteredByMakeCars = filteringByMake(props.filtering, filteredByColourCars);
   const filteredByFuelCars = filteringByFuel(props.filtering, filteredByMakeCars);
 
+  function handleLogout(e) {
+    e.preventDefault();
+    props.dispatch(userLogout());
+  };
+
   return (
     <div>
       <div className="Login-link">
         {props.login.userName === null
           ? <Link className="login-link" to="/auth">Login</Link>
           : <div>
-              Hello {props.login.userName}
+              Welcome, {props.login.userName}
+              <a href="/" className="Logout-link" onClick={handleLogout}>Logout</a>
             </div>
 
         }
