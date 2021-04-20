@@ -27,30 +27,30 @@ function Filtering(props) {
   };
 
   return (
-    <div>
-      <label>Filter by:</label>
-        <select onChange={filteringByLocation}>
+    <div className="filtering">
+      <label className="filter-text">Filter by:</label>
+        <select className="filter-window" onChange={filteringByLocation}>
           <option value="">--Location--</option>
           <option value="wellington">Wellington</option>
           <option value="blenheim">Blenheim</option>
           <option value="auckland">Auckland</option>
         </select>
 
-        <select onChange={filteringByColour}>
+        <select className="filter-window" onChange={filteringByColour}>
           <option value="">--Colour--</option>
           <option value="grey">Grey</option>
           <option value="red">Red</option>
           <option value="green">Green</option>
         </select>
 
-        <select onChange={filteringByMakeCompany}>
+        <select className="filter-window" onChange={filteringByMakeCompany}>
           <option value="">--Make--</option>
           <option value="mitsubishi">Mitsubishi</option>
           <option value="toyota">Toyota</option>
           <option value="holden">Holden</option>
         </select>
 
-        <select onChange={filteringByFuel}>
+        <select className="filter-window" onChange={filteringByFuel}>
           <option value="">--Fuel--</option>
           <option value="petrol">Petrol</option>
           <option value="hybrid">Hybrid</option>

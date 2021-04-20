@@ -97,7 +97,8 @@ function Cars(props) {
 
   return (
     <div>
-      <div className="Login-link">
+      <div className="header-container">
+        <div className="Login-link">
         {props.login.userName === null
           ? <Link className="login-link" to="/auth">Login</Link>
           : <div>
@@ -106,13 +107,14 @@ function Cars(props) {
             </div>
 
         }
-
-      </div>
-        <h1 className="header">cars4you</h1>
-        <div className="sorting-filtering">
-          <Sorting />
-          <Filtering />
         </div>
+        <h1 className="header">cars4you</h1>
+      </div>
+      <div className="sorting-filtering">
+        <Sorting />
+        <Filtering />
+      </div>
+
         <div>
           <div className="car-card detail">
           {filteredByFuelCars.map(car => (
