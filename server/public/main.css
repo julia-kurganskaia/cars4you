@@ -19,7 +19,28 @@ html, body {
       ), url(./css-images/road.jpg);
     width: 100%;
     height: 700px;
+    box-shadow: 0 10px 10px -6px #2f8b6d50;
+}
+
+.home-link-container {
+    background: linear-gradient(
+        rgba(90, 79, 240, 0.75),
+        rgba(18, 16, 82, 0.75)
+      ), url(./css-images/road.jpg);
+    width: 100%;
+    height: 700px;
     box-shadow: 0 10px 10px -6px #397a6450;
+}
+
+.home-container {
+    padding: 20px;
+    box-shadow: 0 12px 10px -7px #80c4af;
+}
+
+.home-link {
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 22px;
 }
 
 .car-card {
@@ -36,8 +57,7 @@ html, body {
 .detail {
     display: flex;
     padding: 30px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 40px;
     background-color: #cad8d341;
     border-radius: 4px;
 }
@@ -170,20 +190,49 @@ html, body {
 }
 
 .login-form {
-    width: 250px;
+    text-align: center;
+    background-color: #fff;;
+    height: 300px;
+    margin-top: -120px;
+    margin-left: 750px;
+    margin-right: 750px;
+    margin-bottom: 140px;
+    box-shadow:
+        0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+        0 12.5px 10px rgba(0, 0, 0, 0.06),
+        0 10.3px 7.9px rgba(0, 0, 0, 0.052),
+        0 7.8px 9.4px rgba(0, 0, 0, 0.020),
+        0 5px 5px rgba(135, 163, 159, 0.178);
+    border-radius: 4px;
+}
+
+.input-form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
+}
+
+.link-text {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    color: rgba(10, 9, 43, 0.75);
 }
 
 .login-input {
-    padding: 5px;
-    margin: 5px;
+    width: 270px;
+    padding: 7px;
+    margin: 7px;
 }
 
 .login-submit {
-    width: 150px;
+    background-color: #4a4f53;
+    color: white;
+    font-size: 18px;
+    width: 120px;
+    height: 40px;
     margin: 5px;
+    border-radius: 3px;
 }
 
 .login-link {

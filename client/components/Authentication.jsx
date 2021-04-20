@@ -29,15 +29,20 @@ function Authentication(props) {
 
   return (
     <div>
-      <div>
-        <Link to="/">Home</Link>
+      <div className="home-link-container">
+        <div className="home-container">
+          <Link className="home-link" to="/">Home</Link>
+        </div>
+        <h1 className="header">cars4you</h1>
       </div>
       <div className="login-form">
-        <h1>Login</h1>
-        <form onSubmit={handleSubmit}>
+        <div className="link-text">
+          <h1>Login</h1>
+        </div>
+        <form className="input-form" onSubmit={handleSubmit}>
           <input className="login-input" placeholder="Email" type="text" name="email" value={formData.email} onChange={handleChange}></input>
-            <input className="login-input" placeholder="Password" type="password" name="password" value={formData.password} onChange={handleChange}></input>
-            <button className="login-submit">Submit</button>
+          <input className="login-input" placeholder="Password" type="password" name="password" value={formData.password} onChange={handleChange}></input>
+          <button className="login-submit">Submit</button>
         </form>
       </div>
     </div>
