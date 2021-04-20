@@ -188,11 +188,35 @@ html, body {
     padding: 20px;
     text-decoration: none;
     color: whitesmoke;
-    font-size: 25px;
+    font-size: 22px;
     box-shadow: 0 12px 10px -7px #80c4af;
 }
 
+.login-container {
+    padding: 10px;
+}
+
 .logout-link {
-    padding-left: 20px;
+    padding: 10px;
     text-decoration: none;
+    color: whitesmoke;
+    font-size: 22px;
+    border-bottom: solid 2px #80c4af;
+}
+
+.logout-container {
+    padding-top: 10px;
+    padding-left: 25px;
+}
+
+.auth-container {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+}
+
+.welcoming {
+    color: white;
+    font-size: 20px;
+    padding: 10px;
 }

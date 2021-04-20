@@ -98,14 +98,13 @@ function Cars(props) {
   return (
     <div>
       <div className="header-container">
-        <div className="Login-link">
+        <div className="login-container">
         {props.login.userName === null
           ? <Link className="login-link" to="/auth">Login</Link>
-          : <div>
-              Welcome, {props.login.userName}
-              <a href="/" className="Logout-link" onClick={handleLogout}>Logout</a>
+          : <div className="auth-container">
+              <div className="welcoming">Welcome, {props.login.userName}</div>
+              <div className="logout-container"><a className="logout-link" href="/" onClick={handleLogout}>Logout</a></div>
             </div>
-
         }
         </div>
         <h1 className="header">cars4you</h1>
@@ -144,7 +143,7 @@ function Cars(props) {
                 </div>
                 <div className="cars-detail feature">
                   <div>
-                    Engine details
+                    Engine details:
                   </div>
                 <div>
                   {car.engine}, {car.fuel}, {car.transmission}
