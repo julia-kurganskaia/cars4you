@@ -28,7 +28,7 @@ function Filtering(props) {
 
   return (
     <div className="filtering">
-      <label className="filter-text">Filter by:</label>
+      <label className="filter-text">Filter by</label>
         <select className="filter-window" onChange={filteringByLocation}>
           <option className="filter-option" value="">--Location--</option>
           <option value="wellington">Wellington</option>

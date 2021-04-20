@@ -32,7 +32,7 @@ function Sorting(props) {
 
     return (
         <div className="sorting">
-            <div id="sort-by">Sort by:</div>
+            <div id="sort-by">Sort by</div>
             <div className="sorting-by">
                 <div id="price">Price</div>
                 <i onClick={highPriceFirstByClick} className={`icon fas fa-angle-down angle${props.sorting.sortBy === "price" && props.sorting.priceHighestFirst === true ? " active" : ""}`}></i>
