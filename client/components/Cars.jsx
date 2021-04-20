@@ -116,7 +116,7 @@ function Cars(props) {
       </div>
 
         <div>
-          <div className="car-card detail">
+          <div className="car-card">
           {filteredByFuelCars.map(car => (
 
             <div className="detail" key={car.id}>
@@ -133,16 +133,16 @@ function Cars(props) {
                 <div className="cars-detail">
                   {car.year}
                 </div>
-                <div className="cars-detail">
+                <div className="cars-detail feature">
                   Colour: {car.colour}
                 </div>
-                <div className="cars-detail">
+                <div className="cars-detail feature">
                 Seats: {car.seats}
                 </div>
-                <div className="cars-detail">
+                <div className="cars-detail feature">
                   Odometer: {car.odometer}
                 </div>
-                <div className="cars-detail">
+                <div className="cars-detail feature">
                   <div>
                     Engine details
                   </div>
@@ -153,9 +153,9 @@ function Cars(props) {
                 <div className="cars-detail">
                   Asking price: $ {car.price}
                 </div>
-                <div>
-                  <Link to={"/car/" + car.id}><button>Learn more</button></Link>
-                  <Link to="/contact"><button>Contact us</button></Link>
+                <div className="details-links">
+                  <Link to={"/car/" + car.id}><button className="detail-link">Learn more</button></Link>
+                  <Link to="/contact"><button className="detail-link">Contact us</button></Link>
                 </div>
               </div>
             </div>

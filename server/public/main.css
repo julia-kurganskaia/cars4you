@@ -19,6 +19,8 @@ html, body {
       ), url(./css-images/road.jpg);
     width: 100%;
     height: 700px;
+    box-shadow: 0 10px 10px -6px #397a6450;
+    /* border-bottom: solid 2px #cad8d341; */
 }
 
 .car-card {
@@ -35,6 +37,10 @@ html, body {
 .detail {
     display: flex;
     padding: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #cad8d341;
+    border-radius: 4px;
 }
 
 .cars-pic {
@@ -53,8 +59,26 @@ html, body {
     font-size: 20px;
 }
 
+.feature {
+    color: #4a4f53;
+}
+
 .oneCar {
     display: flex;
+}
+
+.details-links {
+    margin-top: 10px;
+}
+
+.detail-link {
+    width: 120px;
+    height: 40px;
+    margin: 5px;
+    font-size: 18px;
+    color: white;
+    background-color: #4a4f53;
+    border-radius: 3px;
 }
 
 .sorting {
@@ -63,7 +87,6 @@ html, body {
     display: flex;
     padding-top: 35px;
     padding-left: 35px;
-    padding-bottom: 115px;
 }
 
 .filtering {
@@ -124,12 +147,12 @@ html, body {
         0 12.5px 10px rgba(0, 0, 0, 0.06),
         0 10.3px 7.9px rgba(0, 0, 0, 0.052),
         0 7.8px 9.4px rgba(0, 0, 0, 0.020),
-        0 5px 5px rgba(0, 0, 0, 0.10);
+        0 5px 5px rgba(135, 163, 159, 0.178);
     border-radius: 4px;
 }
 
 .filter-text {
-    padding-right: 10px;
+    padding-right: 15px;
 }
 
 .filter-window {
@@ -166,6 +189,7 @@ html, body {
     text-decoration: none;
     color: whitesmoke;
     font-size: 25px;
+    box-shadow: 0 12px 10px -7px #80c4af;
 }
 
 .logout-link {
