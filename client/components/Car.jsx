@@ -68,9 +68,11 @@ function Car(props) {
         };
     };
     return (
-        <div>
-            <Link to="/">Home</Link>
-            <div>Sorry, no car was found.</div>
+        <div className="header-container">
+            <div className="home-container">
+                <Link className="home-link" to="/">Home</Link>
+            </div>
+            <div className="a404-page">Sorry, no car was found.</div>
         </div>
     );
 };
