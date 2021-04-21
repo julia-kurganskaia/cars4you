@@ -18,20 +18,25 @@ function Car(props) {
             const displayingCar = data[i];
 
             return (
-                <div >
-                    <Link to="/">Home</Link>
-                    <div className="oneCar">
+                <div>
+                    <div id="car-header">
+                        <div className="home-container">
+                            <Link className="home-link" to="/">Home</Link>
+                        </div>
+                        <h1 className="header">cars4you</h1>
+                    </div>
+                    <div className="one-car">
                         <div className="content">
                             <img className="car-pic" src={"listings-images/" + displayingCar.id.toString() + ".jpg"} />
                         </div>
                         <div className="content">
-                            <div className="cars-detail">
+                            <div className="cars-detail bold-text">
                                 {displayingCar.location}
                             </div>
-                            <div className="cars-detail">
+                            <div className="cars-detail bold-text">
                                 {displayingCar.name}
                             </div>
-                            <div className="cars-detail">
+                            <div className="cars-detail bold-text">
                                 {displayingCar.year}
                             </div>
                             <div className="cars-detail">
@@ -52,10 +57,10 @@ function Car(props) {
                             <div className="cars-detail">
                                 {displayingCar.about}
                             </div>
-                            <div className="cars-detail">
-                                Asking price: $ {displayingCar.price}
+                            <div className="cars-detail bold-text price">
+                                Asking price: ${displayingCar.price}
                             </div>
-                            <Link to="/contact"><button>Contact us</button></Link>
+                            <Link to="/contact"><button className="contact-link">Contact us</button></Link>
                         </div>
                     </div>
                 </div>
