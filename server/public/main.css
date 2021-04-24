@@ -7,7 +7,6 @@ html, body {
 
 .header {
     text-align: center;
-    font-size: 70px;
     color: whitesmoke;
     font-size: 100px;
 }
@@ -124,14 +123,12 @@ html, body {
     font-size: 20px;
     height: 20px;
     display: flex;
-    padding-top: 35px;
-    padding-left: 35px;
+    padding: 35px 0px 0px 35px;
 }
 
 .filtering {
     font-size: 20px;
-    padding-top: 35px;
-    padding-right: 35px;
+    padding: 35px 35px 0px 0px;
 }
 
 .filter-text {
@@ -185,9 +182,7 @@ html, body {
     justify-content: space-around;
     background-color: #fff;;
     height: 100px;
-    margin-top: -50px;
-    margin-left: 400px;
-    margin-right: 400px;
+    margin: -50px 400px 0px 400px;
     box-shadow:
         0 2.8px 2.2px rgba(0, 0, 0, 0.034),
         0 6.7px 5.3px rgba(0, 0, 0, 0.048),
@@ -199,8 +194,7 @@ html, body {
 }
 
 .filter-window {
-    margin-right: 7px;
-    margin-left: 10px;
+    margin: 0px 7px 0px 10px;
     width: 100px;
     height: 25px;
 }
@@ -213,10 +207,7 @@ html, body {
     text-align: center;
     background-color: #fff;
     height: 300px;
-    margin-top: -120px;
-    margin-left: 750px;
-    margin-right: 750px;
-    margin-bottom: 140px;
+    margin: -120px 750px 140px 750px;
     box-shadow:
         0 2.8px 2.2px rgba(0, 0, 0, 0.034),
         0 6.7px 5.3px rgba(0, 0, 0, 0.048),
@@ -234,8 +225,7 @@ html, body {
 }
 
 .link-text {
-    padding-top: 20px;
-    padding-bottom: 10px;
+    padding: 20px 0px 10px 0px;
     color: rgba(10, 9, 43, 0.75);
 }
 
@@ -288,8 +278,7 @@ html, body {
 }
 
 .logout-container {
-    padding-top: 8px;
-    padding-left: 25px;
+    padding: 8px 0px 0px 25px;
 }
 
 .auth-container {
@@ -350,6 +339,5 @@ html, body {
 }
 
 .contact {
-    margin-top: 15px;
-    margin-bottom: 15px;;
+    margin: 15px 0px 15px 0px;
 }
