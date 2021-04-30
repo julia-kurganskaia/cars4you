@@ -8,5 +8,9 @@ export function getCars() {
   return request.get(rootUrl + "/cars")
     .then(res => {
       return res.body.cars;
+    })
+    .catch(err => {
+      console.log(err);
+      return [];
     });
 };
