@@ -9,7 +9,10 @@ router.get("/", (req, res) => {
     db.findUserByEmail(req.session.email)
         .then(result => {
             if (result !== null) {
-                res.json(result);
+                res.json({
+                    email: result.email,
+                    user_name: result.user_name,
+                });
             }
         })
         .catch(err => {
