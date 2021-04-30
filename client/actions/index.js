@@ -1,6 +1,7 @@
 //@ts-check
 
 import { getCars } from "../apis/cars";
+import { login } from "../apis/auth";
 import request from "superagent";
 import history from "../utils/history";
 
@@ -19,23 +20,26 @@ export const FILTER_BY_FUEL = "FILTER_BY_FUEL";
 export const USER_DATA = "USER_DATA";
 export const USER_LOGOUT = "USER_LOGOUT";
 
+export function setUser(userData) {
+  return {
+    type: USER_DATA,
+    userData
+  };
+};
+
 export function loginUser(email, password) {
   return (dispatch) => {
-    request.post("/api/v1/auth")
-      .send({email: email, password: password})
+    return login(email, password)
       .then(res => {
-        if (res.body === false) {
-          alert("Please, enter correct credentials")
-        } else {
-          dispatch({
-            type: USER_DATA,
-            userData: res.body,
-          })
-
-          sessionStorage.setItem("userName", res.body.user_name);
-
-          history.push("/");
-        }
+        sessionStorage.setItem("userName", res.body.user_name);
+        history.push("/");
+        return res.body;
+      })
+      .then(user => {
+        dispatch(setUser(user))
+      })
+      .catch(() => {
+        alert("Please, enter correct credentials")
       })
   };
 };
