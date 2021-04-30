@@ -70,10 +70,9 @@ export function fetchCars() {
       return;
     }
 
-    return getCars()
+    getCars()
       .then(cars => {
         dispatch(setCars(cars));
-        return null;
       });
   };
 };
