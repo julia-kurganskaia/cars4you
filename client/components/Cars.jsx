@@ -102,8 +102,15 @@ function Cars(props) {
         {props.login.userName === null
           ? <Link className="login-link" to="/auth">Login</Link>
           : <div className="auth-container">
-              <div className="welcoming">Welcome, {props.login.userName}</div>
-              <div className="logout-container"><a className="logout-link" href="/" onClick={handleLogout}>Logout</a></div>
+              <div className="welcoming">
+                Welcome, {props.login.userName}
+              </div>
+              <div>
+                <Link to="/profile"><i className="fas fa-user"></i></Link>
+              </div>
+              <div className="logout-container">
+                <a className="logout-link" href="/" onClick={handleLogout}>Logout</a>
+              </div>
             </div>
         }
         </div>
