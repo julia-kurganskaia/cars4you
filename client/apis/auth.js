@@ -8,3 +8,11 @@ export function login(email, password) {
     return request.post(rootUrl + "/auth")
         .send({email: email, password: password})
 };
+
+
+export function getProfile() {
+    return request.get(rootUrl + "/profile")
+        .then(res => {
+            return res.body;
+        })
+};

@@ -1,9 +1,16 @@
 //@ts-check
 
-import React from "react";
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import { getUserProfile } from "../actions";
 
-function Profile() {
+function Profile(props) {
+    useEffect(() => {
+        console.log(props)
+        props.dispatch(getUserProfile())
+    }, []);
+
     return (
         <div>
             <div className="small-header">
@@ -11,8 +18,19 @@ function Profile() {
                     <Link className="home-link" to="/">Home</Link>
                 </div>
             </div>
+            <div>
+                <div>Your name: {props.profile.user_name}</div>
+                <div>Your email: {props.profile.email}</div>
+            </div>
+
         </div>
     )
 };
 
-export default Profile
+const mapStateToProps = (globalState) => {
+    return {
+        profile: globalState.profile,
+    }
+}
+
+export default connect(mapStateToProps)(Profile)

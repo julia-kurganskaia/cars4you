@@ -1,7 +1,7 @@
 //@ts-check
 
 import { getCars } from "../apis/cars";
-import { login } from "../apis/auth";
+import { login, getProfile } from "../apis/auth";
 import request from "superagent";
 import history from "../utils/history";
 
@@ -19,6 +19,7 @@ export const FILTER_BY_MAKE = "FILTER_BY_MAKE";
 export const FILTER_BY_FUEL = "FILTER_BY_FUEL";
 export const USER_DATA = "USER_DATA";
 export const USER_LOGOUT = "USER_LOGOUT";
+export const SET_PROFILE = "SET_PROFILE";
 
 export function setUser(userData) {
   return {
@@ -54,6 +55,22 @@ export function userLogout() {
         sessionStorage.clear();
       });
   };
+};
+
+export function userProfile(user) {
+  return {
+    type: SET_PROFILE,
+    user
+  }
+};
+
+export function getUserProfile() {
+  return (dispatch) => {
+    return getProfile()
+      .then(user => {
+        dispatch(userProfile(user))
+      })
+  }
 };
 
 export function setCars(cars) {
