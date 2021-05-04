@@ -341,3 +341,25 @@ html, body {
 .contact {
     margin: 15px 0px 15px 0px;
 }
+
+#profile-info-container {
+    margin: 35px 0px 0px 3px;
+    background-color: #aadbca41;
+}
+
+.info-container {
+    display: flex;
+    padding: 10px 0px 25px 5px;
+    border-bottom: solid 4px whitesmoke;
+    border-radius: 4px;
+}
+
+.container {
+    padding: 10px 30px 0px 20px;
+    font-size: 20px;
+    color: #30304E;
+}
+
+.bold-text {
+    font: bold;
+}

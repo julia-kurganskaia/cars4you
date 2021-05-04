@@ -7,7 +7,6 @@ import { getUserProfile } from "../actions";
 
 function Profile(props) {
     useEffect(() => {
-        console.log(props)
         props.dispatch(getUserProfile())
     }, []);
 
@@ -18,9 +17,16 @@ function Profile(props) {
                     <Link className="home-link" to="/">Home</Link>
                 </div>
             </div>
-            <div>
-                <div>Your name: {props.profile.user_name}</div>
-                <div>Your email: {props.profile.email}</div>
+            <div id="profile-info-container">
+                <div className="info-container">
+                    <div className="container bold-text">Name</div>
+                    <div className="container">{props.profile.user_name}</div>
+                </div>
+                <div className="info-container">
+                    <div className="container bold-text">Email</div>
+                    <div className="container">{props.profile.email}</div>
+                </div>
+
             </div>
 
         </div>
