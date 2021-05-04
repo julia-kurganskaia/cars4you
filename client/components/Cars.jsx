@@ -106,7 +106,7 @@ function Cars(props) {
                 Welcome, {props.login.userName}
               </div>
               <div>
-                <Link to="/profile"><i className="fas fa-user"></i></Link>
+                <Link to="/profile"><i className="fas fa-user profile-icon"></i></Link>
               </div>
               <div className="logout-container">
                 <a className="logout-link" href="/" onClick={handleLogout}>Logout</a>

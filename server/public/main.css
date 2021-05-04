@@ -363,3 +363,9 @@ html, body {
 .bold-text {
     font: bold;
 }
+
+.profile-icon {
+    color: whitesmoke;
+    width: 20px;
+    padding: 15px 10px 0px 10px;
+}
