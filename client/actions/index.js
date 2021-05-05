@@ -1,7 +1,7 @@
 //@ts-check
 
 import { getCars } from "../apis/cars";
-import { login, getProfile } from "../apis/auth";
+import { login, logout, getProfile } from "../apis/auth";
 import request from "superagent";
 import history from "../utils/history";
 
@@ -46,15 +46,20 @@ export function loginUser(email, password) {
 };
 
 export function userLogout() {
+  sessionStorage.clear();
+
   return (dispatch) => {
-    request.post("/api/v1/auth/logout")
+    return logout()
       .then(() => {
-        dispatch({
-          type: USER_LOGOUT,
-        })
-        sessionStorage.clear();
-      });
+        dispatch(userLogoutAction())
+      })
   };
+};
+
+export function userLogoutAction() {
+  return {
+    type: USER_LOGOUT,
+  }
 };
 
 export function userProfile(user) {

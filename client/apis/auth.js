@@ -9,6 +9,9 @@ export function login(email, password) {
         .send({email: email, password: password})
 };
 
+export function logout() {
+    return request.post(rootUrl + "/auth/logout");
+};
 
 export function getProfile() {
     return request.get(rootUrl + "/profile")
