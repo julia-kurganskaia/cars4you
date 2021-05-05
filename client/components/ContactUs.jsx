@@ -16,7 +16,7 @@ function ContactUs() {
                             Would you like to find out more and want to talk to someone?
                         </div>
                         <div className="text-container">
-                            Contact us by clicking on one of the boxes below to let us know if you have any questions.
+                            Contact us!
                         </div>
                     </div>
                     <div id="contact-information">
