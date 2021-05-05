@@ -99,11 +99,11 @@ function Cars(props) {
     <div>
       <div className="header-container">
         <div className="login-container">
-        {props.login.userName === null
+        {props.auth.userName === null
           ? <Link className="login-link" to="/auth">Login</Link>
           : <div className="auth-container">
               <div className="welcoming">
-                Welcome, {props.login.userName}
+                Welcome, {props.auth.userName}
               </div>
               <div>
                 <Link to="/profile"><i className="fas fa-user profile-icon"></i></Link>
@@ -177,7 +177,7 @@ const mapStateToProps = (globalState) => {
       cars: globalState.cars,
       sorting: globalState.sorting,
       filtering: globalState.filtering,
-      login: globalState.login,
+      auth: globalState.auth,
     }
 };
 
