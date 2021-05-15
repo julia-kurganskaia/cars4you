@@ -21,6 +21,7 @@ As a registered user:
 - [x] I want to log in with my registered details.
 - [x] I want to learn more about cars.
 - [x] I want to see shops contact information.
+- [x] I want to check my profile.
 - [ ] I want to message the seller.
 - [ ] I want to add a car to my watch list.
 - [ ] I want to add a car to sell it.
