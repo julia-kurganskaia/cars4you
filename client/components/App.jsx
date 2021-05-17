@@ -9,6 +9,7 @@ import ContactUs from "./ContactUs";
 import Car from "./Car";
 import Authentication from "./Authentication";
 import Profile from "./Profile";
+import SignUp from "./SignUp";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Route path="/profile" component={Profile} />
       <Route path="/contact" component={ContactUs} />
       <Route path="/car/:id" component={Car} />
+      <Route path="/registration" component={SignUp} />
     </Router>
   );
 };

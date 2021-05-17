@@ -218,6 +218,21 @@ html, body {
     border-radius: 4px;
 }
 
+.signUp-form {
+    text-align: center;
+    background-color: #fff;
+    height: 350px;
+    margin: -120px 750px 140px 750px;
+    box-shadow:
+        0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+        0 12.5px 10px rgba(0, 0, 0, 0.06),
+        0 10.3px 7.9px rgba(0, 0, 0, 0.052),
+        0 7.8px 9.4px rgba(0, 0, 0, 0.020),
+        0 5px 5px rgba(135, 163, 159, 0.178);
+    border-radius: 4px;
+}
+
 .input-form {
     display: flex;
     flex-direction: column;
@@ -229,13 +244,13 @@ html, body {
     color: rgba(10, 9, 43, 0.75);
 }
 
-.login-input {
+.login-input, .signUp-input {
     width: 270px;
     padding: 7px;
     margin: 7px;
 }
 
-.login-submit {
+.login-submit, .signUp-submit {
     background-color: #4a4f53;
     color: white;
     font-size: 18px;
