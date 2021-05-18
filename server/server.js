@@ -8,6 +8,7 @@ const FileStore = require("session-file-store")(session);
 const carRoutes = require("./routes/cars");
 const authRoutes = require("./routes/users");
 const profileRoutes = require("./routes/profile");
+const registrationRoutes = require("./routes/registration");
 
 const server = express();
 
@@ -26,5 +27,6 @@ server.use(session({
 server.use("/api/v1/cars", carRoutes);
 server.use("/api/v1/auth", authRoutes);
 server.use("/api/v1/profile", profileRoutes);
+server.use("/api/v1/registration", registrationRoutes);
 
 module.exports = server
