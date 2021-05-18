@@ -100,12 +100,14 @@ function Cars(props) {
       <div className="header-container">
 
         <div className="login-container">
-        <div>
-          <Link className="login-signUp-link" to="/registration">Sign Up</Link>
-        </div>
+
 
         {props.auth.userName === null
-          ? <Link className="login-signUp-link" to="/auth">Login</Link>
+          ?
+          <div>
+            <Link className="login-signUp-link" to="/auth">Login</Link>
+            <Link className="login-signUp-link" to="/registration">Sign Up</Link>
+          </div>
           : <div className="auth-container">
               <div className="welcoming">
                 Welcome, {props.auth.userName}
