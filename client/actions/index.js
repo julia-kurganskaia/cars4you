@@ -1,7 +1,7 @@
 //@ts-check
 
 import { getCars } from "../apis/cars";
-import { login, logout, getProfile } from "../apis/auth";
+import { login, logout, getProfile, signUp } from "../apis/auth";
 import request from "superagent";
 import history from "../utils/history";
 
@@ -20,6 +20,7 @@ export const FILTER_BY_FUEL = "FILTER_BY_FUEL";
 export const USER_DATA = "USER_DATA";
 export const USER_LOGOUT = "USER_LOGOUT";
 export const SET_PROFILE = "SET_PROFILE";
+export const SIGNUP_USER = "SIGNUP_USER";
 
 export function setUser(userData) {
   return {
@@ -27,6 +28,25 @@ export function setUser(userData) {
     userData
   };
 };
+
+export function signUpUser(name, email, password) {
+  return (dispatch) => {
+    return signUp(name, email, password)
+      .then(user => {
+        dispatch(registerUser(user))
+      })
+      .catch(() => {
+        alert("Please, enter correct credentials")
+      })
+  };
+};
+
+export function registerUser(user) {
+  return {
+    type: SIGNUP_USER,
+    user
+  }
+}
 
 export function loginUser(email, password) {
   return (dispatch) => {
