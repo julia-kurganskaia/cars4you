@@ -7,7 +7,6 @@ import sorting from "./sorting";
 import filtering from "./filtering";
 import auth from "./auth";
 import profile from "./profile";
-import registration from "./registration";
 
 export default combineReducers({
   cars,
@@ -15,5 +14,4 @@ export default combineReducers({
   filtering,
   auth,
   profile,
-  registration,
 });
