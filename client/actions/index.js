@@ -33,6 +33,12 @@ export function signUpUser(name, email, password) {
   return (dispatch) => {
     return signUp(name, email, password)
       .then(user => {
+        sessionStorage.setItem("userName", user.body.user_name);
+        history.push("/");
+        console.log(user.body.user_name, user.body)
+        return user.body;
+      })
+      .then(user => {
         dispatch(registerUser(user))
       })
       .catch(() => {
