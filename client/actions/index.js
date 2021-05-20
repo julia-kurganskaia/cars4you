@@ -36,8 +36,8 @@ export function signUpUser(name, email, password) {
         dispatch(registerUser(user))
       })
       .catch(() => {
-        alert("Please, enter correct credentials")
-      })
+        alert("Please, enter correct credentials");
+      });
   };
 };
 
@@ -60,8 +60,8 @@ export function loginUser(email, password) {
         dispatch(setUser(user))
       })
       .catch(() => {
-        alert("Please, enter correct credentials")
-      })
+        alert("Please, enter correct credentials");
+      });
   };
 };
 
@@ -72,7 +72,7 @@ export function userLogout() {
     return logout()
       .then(() => {
         dispatch(userLogoutAction())
-      })
+      });
   };
 };
 
@@ -94,7 +94,7 @@ export function getUserProfile() {
     return getProfile()
       .then(user => {
         dispatch(userProfile(user))
-      })
+      });
   }
 };
 
