@@ -75,7 +75,7 @@ function filteringByFuel(filtering, cars) {
 
   let filteredByFuel = cars.filter(car => car.fuel.toLowerCase() === filtering.fuel.toLowerCase());
   return filteredByFuel;
-}
+};
 
 function Cars(props) {
 
@@ -98,10 +98,7 @@ function Cars(props) {
   return (
     <div>
       <div className="header-container">
-
         <div className="login-container">
-
-
         {props.auth.userName === null
           ?
           <div>
