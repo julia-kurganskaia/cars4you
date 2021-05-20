@@ -16,10 +16,18 @@ function findUserByEmail(email) {
 
 function registerUser(name, email, password, db = connection) {
   return db("users")
-    .insert({
-      user_name: name,
-      email: email,
-      password: password,
+    .where("email", email)
+    .then(result => {
+      if (result.length !== 0) {
+        return Promise.reject("User exists");
+      }
+
+      return db("users")
+        .insert({
+          user_name: name,
+          email: email,
+          password: password,
+        });
     })
     .then(id => id[0])
 }
