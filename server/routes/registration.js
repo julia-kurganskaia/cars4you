@@ -18,7 +18,7 @@ router.post("/", (req, res) => {
       return getUser(id);
     })
     .then(user => {
-      return res.json(user);
+      return res.json({id: user.id, user_name: user.user_name, email: user.email});
     })
 });
 
