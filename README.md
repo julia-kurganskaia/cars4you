@@ -12,7 +12,7 @@ Below is how the main page looks like.
 
 As a non-registered user:
 
-- [ ] I want to register for the App under my name.
+- [x] I want to register for the App under my name.
 - [x] I want to sort cars by price, age and odometer.
 - [x] I want to filter cars by location, colour and fuel.
 
