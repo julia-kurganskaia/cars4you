@@ -41,7 +41,7 @@ export function signUpUser(name, email, password) {
         dispatch(registerUser(user))
       })
       .catch(() => {
-        alert("Please, enter correct credentials");
+        alert("User with this email already exists.");
       });
   };
 };
