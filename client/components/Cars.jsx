@@ -101,7 +101,7 @@ function Cars(props) {
         <div className="login-container">
         {props.auth.userName === null
           ?
-          <div>
+          <div className="auth-links">
             <Link className="login-signUp-link" to="/auth">Login</Link>
             <Link className="login-signUp-link" to="/registration">Sign Up</Link>
           </div>
