@@ -26,9 +26,8 @@ function Profile(props) {
                     <div className="container bold-text">Email</div>
                     <div className="container">{props.profile.email}</div>
                 </div>
-
             </div>
-
+            <Link to="/listing"><button>Add listing</button></Link>
         </div>
     )
 };
