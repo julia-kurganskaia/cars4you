@@ -10,6 +10,7 @@ import Car from "./Car";
 import Authentication from "./Authentication";
 import Profile from "./Profile";
 import SignUp from "./SignUp";
+import Listing from "./Listing";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Route path="/contact" component={ContactUs} />
       <Route path="/car/:id" component={Car} />
       <Route path="/registration" component={SignUp} />
+      <Route path="/listing" component={Listing} />
     </Router>
   );
 };
