@@ -109,7 +109,7 @@ html, body {
     margin-top: 10px;
 }
 
-.detail-link {
+.detail-link, .listing-button {
     width: 120px;
     height: 40px;
     margin: 5px;
@@ -396,4 +396,8 @@ html, body {
     color: whitesmoke;
     font-size: 22px;
     padding-left: 25px;
+}
+
+.listing-button {
+
 }

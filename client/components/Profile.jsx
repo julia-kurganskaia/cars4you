@@ -27,7 +27,7 @@ function Profile(props) {
                     <div className="container">{props.profile.email}</div>
                 </div>
             </div>
-            <Link to="/listing"><button>Add listing</button></Link>
+            <Link to="/listing"><button className="listing-button">Add listing</button></Link>
         </div>
     )
 };
