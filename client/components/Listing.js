@@ -10,6 +10,12 @@ for (let year = 1935; year <= new Date().getFullYear(); year++) {
   yearsToChoose.push(year);
 }
 
+let options = [];
+
+for (let i = 1; i <= 7; i++) {
+  options.push(i);
+}
+
 function Listing() {
     return (
         <div>
@@ -33,13 +39,18 @@ function Listing() {
                 <input placeholder="Colour"></input>
                 <select>
                   <option value="">Seats</option>
-                  <option>1</option>
+                  {options.map(option => {
+                    return (
+                      <option>{option}</option>
+                    )
+                  })}
+                  {/* <option>1</option>
                   <option>2</option>
                   <option>3</option>
                   <option>4</option>
                   <option>5</option>
                   <option>6</option>
-                  <option>7</option>
+                  <option>7</option> */}
                   <option>8 and more</option>
                 </select>
                 <input placeholder="Odometer"></input>
