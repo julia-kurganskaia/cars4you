@@ -28,6 +28,7 @@ function Listing() {
             <form className="input-form">
                 <input placeholder="Location"></input>
                 <input placeholder="Model"></input>
+                <input placeholder="Colour"></input>
                 <select>
                   <option value="">Year</option>
                   {yearsToChoose.map(year => {
@@ -36,12 +37,11 @@ function Listing() {
                     )
                   })}
                 </select>
-                <input placeholder="Colour"></input>
                 <select>
                   <option value="">Seats</option>
                   {options.map(option => {
                     return (
-                      <option>{option}</option>
+                      <option key={option}>{option}</option>
                     )
                   })}
                   <option>8 and more</option>
