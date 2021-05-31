@@ -398,6 +398,30 @@ html, body {
     padding-left: 25px;
 }
 
-.listing-button {
+.select-options {
+    width: 250px;
+    height: 30px;
+    margin: 3px;
+    font-size: 17px;
+    color: rgb(65, 63, 63);
+}
 
+.input {
+    width: 500px;
+    height: 40px;
+    margin: 5px;
+    font-size: 17px;
+}
+
+.listing-form {
+    margin-top: 20px;
+}
+
+.car-description {
+    height: 250px;
+}
+
+.label-description {
+    color: rgb(65, 63, 63);
+    font-size: 17px;
 }

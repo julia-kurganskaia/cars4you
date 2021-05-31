@@ -25,35 +25,37 @@ function Listing() {
                     <Link className="profile-link" to="/profile">Profile</Link>
                 </div>
             </div>
-            <form className="input-form">
-                <input placeholder="Location"></input>
-                <input placeholder="Model"></input>
-                <input placeholder="Colour"></input>
-                <select>
-                  <option value="">Year</option>
-                  {yearsToChoose.map(year => {
-                    return (
-                      <option key={year}>{year}</option>
-                    )
-                  })}
-                </select>
-                <select>
-                  <option value="">Seats</option>
-                  {options.map(option => {
-                    return (
-                      <option key={option}>{option}</option>
-                    )
-                  })}
-                  <option>8 and more</option>
-                </select>
-                <input placeholder="Odometer"></input>
-                <input placeholder="Engine size"></input>
-                <input placeholder="Odometer"></input>
-                <input placeholder="Fuel type"></input>
-                <input placeholder="Transmission"></input>
-                <input placeholder="Description"></input>
-                <input placeholder="Asking price"></input>
-                <button>Publish</button>
+            <form className="input-form listing-form">
+                <input className="input" placeholder="Location"></input>
+                <input className="input" placeholder="Model"></input>
+                <input className="input" placeholder="Colour"></input>
+                <div>
+                  <select className="select-options">
+                    <option value="">Year</option>
+                    {yearsToChoose.map(year => {
+                      return (
+                        <option key={year}>{year}</option>
+                      )
+                    })}
+                  </select>
+                  <select className="select-options">
+                    <option value="">Seats</option>
+                    {options.map(option => {
+                      return (
+                        <option key={option}>{option}</option>
+                      )
+                    })}
+                    <option>8 and more</option>
+                  </select>
+                </div>
+                <input className="input" placeholder="Odometer"></input>
+                <input className="input" placeholder="Engine size"></input>
+                <input className="input" placeholder="Fuel type"></input>
+                <input className="input" placeholder="Transmission"></input>
+                <label className="label-description">Description</label>
+                <textarea className="input car-description"></textarea>
+                <input className="input" placeholder="Asking price"></input>
+                <button className="listing-button">Publish</button>
             </form>
         </div>
     )
