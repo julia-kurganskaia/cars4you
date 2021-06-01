@@ -16,7 +16,7 @@ for (let i = 1; i <= 7; i++) {
   options.push(i);
 }
 
-function Listing() {
+function Listing(props) {
     return (
         <div>
             <div className="small-header">
@@ -26,10 +26,10 @@ function Listing() {
                 </div>
             </div>
             <form className="input-form listing-form">
-                <input className="input" placeholder="Location"></input>
-                <input className="input" placeholder="Model"></input>
-                <input className="input" placeholder="Colour"></input>
-                <div>
+                <input className="input" placeholder="Location" name="location"></input>
+                <input className="input" placeholder="Model" name="model"></input>
+                <input className="input" placeholder="Colour" name="colour"></input>
+                <div className="year-seats-options">
                   <select className="select-options">
                     <option value="">Year</option>
                     {yearsToChoose.map(year => {
@@ -48,13 +48,16 @@ function Listing() {
                     <option>8 and more</option>
                   </select>
                 </div>
-                <input className="input" placeholder="Odometer"></input>
-                <input className="input" placeholder="Engine size"></input>
-                <input className="input" placeholder="Fuel type"></input>
-                <input className="input" placeholder="Transmission"></input>
-                <label className="label-description">Description</label>
-                <textarea className="input car-description"></textarea>
-                <input className="input" placeholder="Asking price"></input>
+                <input className="input" placeholder="Odometer" name="odometer"></input>
+                <input className="input" placeholder="Engine size" name="engineSize"></input>
+                <input className="input" placeholder="Fuel type" name="fuelType"></input>
+                <input className="input" placeholder="Transmission" name="transmission"></input>
+                <label className="label-description">
+                   Description
+                  <textarea className="input car-description"></textarea>
+                </label>
+
+                <input className="input" placeholder="Asking price" name="price"></input>
                 <button className="listing-button">Publish</button>
             </form>
         </div>

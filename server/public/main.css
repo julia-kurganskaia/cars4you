@@ -399,17 +399,23 @@ html, body {
 }
 
 .select-options {
-    width: 250px;
+    width: 245px;
     height: 30px;
-    margin: 3px;
+    margin-top: 5px;
     font-size: 17px;
     color: rgb(65, 63, 63);
+}
+
+.year-seats-options {
+    display: flex;
+    justify-content: space-between;
+    width: 510px;
 }
 
 .input {
     width: 500px;
     height: 40px;
-    margin: 5px;
+    margin-top: 5px;
     font-size: 17px;
 }
 
@@ -422,6 +428,8 @@ html, body {
 }
 
 .label-description {
+    display: flex;
+    flex-direction: column;
     color: rgb(65, 63, 63);
     font-size: 17px;
 }
