@@ -14,6 +14,7 @@ exports.up = function (knex) {
     table.integer("year")
     table.string("colour")
     table.integer("seats")
+    table.integer("owner_id")
   });
 };
 
