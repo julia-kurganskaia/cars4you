@@ -55,7 +55,7 @@ function Car(props) {
                                 </div>
                             </div>
                             <div className="cars-detail">
-                                {displayingCar.about}
+                                {displayingCar.description}
                             </div>
                             <div className="cars-detail bold-text price">
                                 Asking price: ${displayingCar.price}
