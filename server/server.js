@@ -9,6 +9,7 @@ const carRoutes = require("./routes/cars");
 const authRoutes = require("./routes/users");
 const profileRoutes = require("./routes/profile");
 const registrationRoutes = require("./routes/registration");
+const listingRoutes = require("./routes/listing");
 
 const server = express();
 
@@ -28,5 +29,6 @@ server.use("/api/v1/cars", carRoutes);
 server.use("/api/v1/auth", authRoutes);
 server.use("/api/v1/profile", profileRoutes);
 server.use("/api/v1/registration", registrationRoutes);
+server.use("/api/v1/listing", listingRoutes);
 
 module.exports = server
