@@ -406,7 +406,7 @@ html, body {
     color: rgb(65, 63, 63);
 }
 
-.year-seats-options {
+.year-seats-options, .location-model-options {
     display: flex;
     justify-content: space-between;
     width: 510px;

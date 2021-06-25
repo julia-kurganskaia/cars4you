@@ -14,3 +14,26 @@ export function getCars() {
       return [];
     });
 };
+
+export function addNewListing(location, model, colour, odometer, engine, fuel, transmission, description, price, year, seats) {
+  return request.post(rootUrl + "/listing")
+    .send({
+      location_id: location,
+      model_id: model,
+      colour: colour,
+      odometer: odometer,
+      engine: engine,
+      fuel: fuel,
+      transmission: transmission,
+      description: description,
+      price: price,
+      year: year,
+      seats: seats,
+    })
+    .then(result => {
+      if (result.body === false) {
+        return Promise.reject();
+      }
+      return result;
+    })
+}

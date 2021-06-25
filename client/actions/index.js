@@ -1,8 +1,7 @@
 //@ts-check
 
-import { getCars } from "../apis/cars";
+import { getCars, addNewListing } from "../apis/cars";
 import { login, logout, getProfile, signUp } from "../apis/auth";
-import request from "superagent";
 import history from "../utils/history";
 
 export const SET_CARS = "SET_CARS";
@@ -21,6 +20,7 @@ export const USER_DATA = "USER_DATA";
 export const USER_LOGOUT = "USER_LOGOUT";
 export const SET_PROFILE = "SET_PROFILE";
 export const SIGNUP_USER = "SIGNUP_USER";
+
 
 export function setUser(userData) {
   return {
@@ -51,7 +51,7 @@ export function registerUser(user) {
     type: SIGNUP_USER,
     user
   }
-}
+};
 
 export function loginUser(email, password) {
   return (dispatch) => {
@@ -111,12 +111,7 @@ export function setCars(cars) {
 };
 
 export function fetchCars() {
-  return (dispatch, getState) => {
-    const state = getState();
-    if (state.cars.length !== 0) {
-      return;
-    }
-
+  return (dispatch) => {
     getCars()
       .then(cars => {
         dispatch(setCars(cars));
@@ -187,3 +182,16 @@ export function filterByFuel(fuel) {
     fuel
   };
 };
+
+export function postNewListing(location_id, model_id, colour, odometer, engine, fuel, transmission, description, price, year, seats) {
+  return () => {
+    return addNewListing(location_id, model_id, colour, odometer, engine, fuel, transmission, description, price, year, seats)
+      .then(() => {
+        history.push("/");
+      })
+      .catch(() => {
+        alert("Something went wrong")
+      });
+  };
+ };
+
