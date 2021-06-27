@@ -24,5 +24,5 @@ As a registered user:
 - [x] I want to check my profile.
 - [ ] I want to message the seller.
 - [ ] I want to add a car to my watch list.
-- [ ] I want to add a car to sell it.
+- [x] I want to add a car to sell it.
 - [ ] I want to change my listings information.
