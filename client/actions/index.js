@@ -183,9 +183,9 @@ export function filterByFuel(fuel) {
   };
 };
 
-export function postNewListing(location_id, model_id, colour, odometer, engine, fuel, transmission, description, price, year, seats) {
+export function postNewListing(listing) {
   return () => {
-    return addNewListing(location_id, model_id, colour, odometer, engine, fuel, transmission, description, price, year, seats)
+    return addNewListing(listing)
       .then(() => {
         history.push("/");
       })

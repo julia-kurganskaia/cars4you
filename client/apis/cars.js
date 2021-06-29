@@ -15,21 +15,9 @@ export function getCars() {
     });
 };
 
-export function addNewListing(location, model, colour, odometer, engine, fuel, transmission, description, price, year, seats) {
+export function addNewListing(listing) {
   return request.post(rootUrl + "/listing")
-    .send({
-      location_id: location,
-      model_id: model,
-      colour: colour,
-      odometer: odometer,
-      engine: engine,
-      fuel: fuel,
-      transmission: transmission,
-      description: description,
-      price: price,
-      year: year,
-      seats: seats,
-    })
+    .send(listing)
     .then(result => {
       if (result.body === false) {
         return Promise.reject();

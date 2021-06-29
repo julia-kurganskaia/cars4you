@@ -1,6 +1,5 @@
 //@ts-check
 
-import session from "express-session";
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
@@ -60,7 +59,7 @@ let modelToChoose = [
 ];
 
 function Listing(props) {
-  const [formData, setFormData] = useState({
+  const [form, setForm] = useState({
     location: "",
     model: "",
     colour: "",
@@ -74,69 +73,54 @@ function Listing(props) {
     seats: "",
   });
 
-  const selectLocation = (event) => {
-    event.persist();
+  const [image, setImage] = useState(null);
 
-    setFormData(currentFormData => {
-      return ({
-        ...currentFormData,
-        location: event.target.value,
-      });
+  const handleChange = (e) => {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
     });
   };
 
-  const selectModel = (event) => {
-    event.persist();
-
-    setFormData(currentFormData => {
-      return ({
-        ...currentFormData,
-        model: event.target.value,
-      })
-    })
-  }
-
-  const selectYear = (event) => {
-    event.persist();
-
-    setFormData(currentFormData => {
-      return ({
-        ...currentFormData,
-        year: event.target.value,
-      });
-    });
+  const handleFileSelect = (e) => {
+    if (e.target.files.length === 1) {
+      setImage(e.target.files[0]);
+    } else {
+      setImage(null);
+    }
   };
 
-  const selectNumberOfSeats = (event) => {
-    event.persist();
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-    setFormData(currentFormData => {
-      return ({
-        ...currentFormData,
-        seats: event.target.value,
-      });
-    });
-  };
+    const newListing = {
+      ...form,
+    };
 
-  function handleChange(event) {
-    event.persist();
+    const formData = new FormData();
 
-    setFormData(currentFormData => {
-      return ({
-        ...currentFormData,
-        [event.target.name]: event.target.value,
-      });
-    });
-  };
+    formData.append("location_id", newListing.location);
+    formData.append("model_id", newListing.model);
+    formData.append("colour", newListing.colour);
+    formData.append("odometer", newListing.odometer);
+    formData.append("engine", newListing.engine);
+    formData.append("fuel", newListing.fuel);
+    formData.append("transmission", newListing.transmission);
+    formData.append("description", newListing.description);
+    formData.append("price", newListing.price);
+    formData.append("year", newListing.year);
+    formData.append("seats", newListing.seats);
 
-  function handleSubmit(event) {
-    event.preventDefault();
+    if (image !== null) {
+      formData.append("img", image);
+    };
 
     props
-      .dispatch(postNewListing(Number(formData.location), Number(formData.model), formData.colour, Number(formData.odometer), Number(formData.engine), formData.fuel, formData.transmission, formData.description, Number(formData.price), Number(formData.year), Number(formData.seats)))
+      .dispatch(postNewListing(formData))
       .then(() => {
         props.dispatch(fetchCars());
       })
+
   };
 
   return (
@@ -149,7 +133,7 @@ function Listing(props) {
       </div>
       <form className="input-form listing-form" onSubmit={handleSubmit}>
         <div className="location-model-options">
-          <select onChange={selectLocation} className="select-options">
+          <select onChange={handleChange} name="location" className="select-options">
             <option value="">Location</option>
               {locationToChoose.map(location => {
                 return (
@@ -157,7 +141,7 @@ function Listing(props) {
                 )
               })}
           </select>
-          <select onChange={selectModel} className="select-options">
+          <select onChange={handleChange} name="model" className="select-options">
             <option value="">Model</option>
               {modelToChoose.map(model => {
                 return (
@@ -166,9 +150,9 @@ function Listing(props) {
               })}
           </select>
         </div>
-        <input className="input" value={formData.colour} placeholder="Colour" name="colour" onChange={handleChange}></input>
+        <input className="input" placeholder="Colour" name="colour" onChange={handleChange}></input>
         <div className="year-seats-options">
-          <select onChange={selectYear} className="select-options">
+          <select onChange={handleChange} name="year" className="select-options">
             <option value="">Year</option>
               {yearsToChoose.map(year => {
                 return (
@@ -176,7 +160,7 @@ function Listing(props) {
                 )
               })}
           </select>
-          <select onChange={selectNumberOfSeats} className="select-options">
+          <select onChange={handleChange} name="seats" className="select-options">
             <option value="">Seats</option>
               {options.map(option => {
                 return (
@@ -186,16 +170,20 @@ function Listing(props) {
             <option>8 and more</option>
           </select>
           </div>
-            <input className="input" value={formData.odometer} placeholder="Odometer" name="odometer" onChange={handleChange}></input>
-            <input className="input" value={formData.engine} placeholder="Engine size" name="engine" onChange={handleChange}></input>
-            <input className="input" value={formData.fuel} placeholder="Fuel type" name="fuel" onChange={handleChange}></input>
-            <input className="input" value={formData.transmission} placeholder="Transmission" name="transmission" onChange={handleChange}></input>
+            <input className="input" placeholder="Odometer" name="odometer" onChange={handleChange}></input>
+            <input className="input" placeholder="Engine size" name="engine" onChange={handleChange}></input>
+            <input className="input" placeholder="Fuel type" name="fuel" onChange={handleChange}></input>
+            <input className="input" placeholder="Transmission" name="transmission" onChange={handleChange}></input>
             <label className="label-description">
               Description
-              <textarea value={formData.description} className="input car-description" name="description" onChange={handleChange}></textarea>
+              <textarea className="input car-description" name="description" onChange={handleChange}></textarea>
             </label>
 
-            <input className="input" value={formData.price} placeholder="Asking price" name="price" onChange={handleChange}></input>
+            <input className="input" placeholder="Asking price" name="price" onChange={handleChange}></input>
+            <div>
+              Add image:
+              <input onChange={handleFileSelect} type="file" />
+            </div>
             <button className="listing-button">Publish</button>
         </form>
       </div>
