@@ -3,7 +3,6 @@
 exports.up = function(knex) {
   return knex.schema.createTable("model", table => {
     table.increments("id")
-    table.integer("make_id")
     table.string("name")
   });
 };
