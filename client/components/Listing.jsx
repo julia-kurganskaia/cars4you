@@ -180,8 +180,8 @@ function Listing(props) {
             </label>
 
             <input className="input" placeholder="Asking price" name="price" onChange={handleChange}></input>
-            <div>
-              Add image:
+            <div className="add-listing">
+              <div className="add-image-text">Add image:</div>
               <input onChange={handleFileSelect} type="file" />
             </div>
             <button className="listing-button">Publish</button>
